@@ -6,10 +6,14 @@ describe('CookingImpComponent', () => {
   let component: CookingImpComponent;
   let fixture: ComponentFixture<CookingImpComponent>;
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ CookingImpComponent ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [CookingImpComponent]
-    });
     fixture = TestBed.createComponent(CookingImpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

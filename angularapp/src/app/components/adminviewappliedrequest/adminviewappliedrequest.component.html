@@ -1,1 +1,87 @@
-<p>adminviewappliedrequest works!</p>
+<div class="admin-background">
+
+
+<div class="admin-page-wrapper">
+
+  <div class="page-header">
+    <h2 class="page-title">Class Requests</h2>
+    <p class="page-subtitle">
+      Review and approve user class requests
+    </p>
+  </div>
+
+  <div class="dashboard-card">
+
+    <div class="table-tools">
+
+      <input
+      class="search-box"
+      type="text"
+      placeholder="Search class..."
+      [(ngModel)]="searchText"
+      (input)="filter()">
+
+    </div>
+
+    <div class="table-wrapper">
+
+      <table class="admin-table" *ngIf="filteredRequests.length > 0; else noData">
+
+        <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>Class</th>
+            <th>User</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Dietary Preferences</th>
+            <th>Goals</th>
+            <th>Actions</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let r of filteredRequests">
+
+            <td>{{r.CookingClassRequestId}}</td>
+            <td>{{r.ClassName}}</td>
+            <td>{{r.UserId}}</td>
+            <td>{{r.RequestDate | date}}</td>
+            <td>{{r.Status}}</td>
+            <td>{{r.DietaryPreferences}}</td>
+            <td>{{r.CookingGoals}}</td>
+
+            <td class="action-buttons">
+
+              <button
+              class="btn-approve"
+              (click)="updateStatus(r.CookingClassRequestId,'Approved')">
+              Approve
+              </button>
+
+              <button
+              class="btn-reject"
+              (click)="updateStatus(r.CookingClassRequestId,'Rejected')">
+              Reject
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <ng-template #noData>
+        <p class="empty-msg">
+          No class requests found.
+        </p>
+      </ng-template>
+
+    </div>
+
+  </div>

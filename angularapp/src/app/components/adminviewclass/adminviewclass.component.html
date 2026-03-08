@@ -1,1 +1,88 @@
-<p>adminviewclass works!</p>
+<!-- <div class="admin-background"> -->
+<div class="admin-page-wrapper">
+
+  <div class="page-header">
+    <h2 class="page-title">Cooking Classes</h2>
+    <p class="page-subtitle">
+      Manage all available cooking classes
+    </p>
+  </div>
+
+  <div class="dashboard-card">
+
+    <div class="table-tools">
+
+      <input
+      class="search-box"
+      type="text"
+      placeholder="Search class..."
+      [(ngModel)]="searchText"
+      (input)="filter()">
+
+    </div>
+
+    <div class="table-wrapper">
+
+      <table class="admin-table" *ngIf="filteredClasses.length > 0; else noData">
+
+        <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>Class Name</th>
+            <th>Cuisine</th>
+            <th>Chef</th>
+            <th>Location</th>
+            <th>Duration</th>
+            <th>Fee</th>
+            <th>Skill Level</th>
+            <th>Actions</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let c of filteredClasses">
+
+            <td>{{c.CookingClassId}}</td>
+            <td>{{c.ClassName}}</td>
+            <td>{{c.CuisineType}}</td>
+            <td>{{c.ChefName}}</td>
+            <td>{{c.Location}}</td>
+            <td>{{c.DurationInHours}} hrs</td>
+            <td>{{c.Fee | currency}}</td>
+            <td>{{c.SkillLevel}}</td>
+
+            <td class="action-buttons">
+
+              <button
+              class="btn-edit"
+              (click)="editClass(c.CookingClassId!)">
+              Edit
+              </button>
+
+              <button
+              class="btn-delete"
+              (click)="deleteClass(c.CookingClassId!)">
+              Delete
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <ng-template #noData>
+        <p class="empty-msg">
+          No cooking classes available.
+        </p>
+      </ng-template>
+
+    </div>
+
+  </div>
+

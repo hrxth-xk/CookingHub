@@ -1,1 +1,101 @@
-<p>admineditclass works!</p>
+<!-- <div class="admin-background"> -->
+
+<div class="admin-page-wrapper">
+
+  <div class="page-header">
+
+    <h2 class="page-title">Edit Cooking Class</h2>
+
+    <p class="page-subtitle">
+      Update the class information below
+    </p>
+
+  </div>
+
+  <div class="dashboard-card form-card">
+
+    <form [formGroup]="classForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-grid">
+
+        <div class="form-field">
+          <label>Class Name</label>
+          <input type="text" formControlName="ClassName">
+        </div>
+
+        <div class="form-field">
+          <label>Cuisine Type</label>
+          <input type="text" formControlName="CuisineType">
+        </div>
+
+        <div class="form-field">
+          <label>Chef Name</label>
+          <input type="text" formControlName="ChefName">
+        </div>
+
+        <div class="form-field">
+          <label>Location</label>
+          <input type="text" formControlName="Location">
+        </div>
+
+        <div class="form-field">
+          <label>Duration</label>
+          <input type="number" formControlName="DurationInHours">
+        </div>
+
+        <div class="form-field">
+          <label>Fee</label>
+          <input type="number" formControlName="Fee">
+        </div>
+
+        <div class="form-field full">
+
+          <label>Skill Level</label>
+
+          <select formControlName="SkillLevel">
+
+            <option value="">Select Skill Level</option>
+
+            <option value="Beginner">Beginner</option>
+
+            <option value="Intermediate">Intermediate</option>
+
+            <option value="Advanced">Advanced</option>
+
+            <option value="Expert">Expert</option>
+
+          </select>
+
+        </div>
+
+        <div class="form-field full">
+          <label>Ingredients Provided</label>
+          <textarea rows="3" formControlName="IngredientsProvided"></textarea>
+        </div>
+
+        <div class="form-field full">
+          <label>Special Requirements</label>
+          <textarea rows="3" formControlName="SpecialRequirements"></textarea>
+        </div>
+
+      </div>
+
+      <div class="error-global" *ngIf="error">{{error}}</div>
+
+      <div class="button-group">
+
+        <button type="submit" class="btn-primary">
+          Update Class
+        </button>
+
+        <button type="button" class="btn-secondary" (click)="goBack()">
+          Back
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

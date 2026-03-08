@@ -1,1 +1,41 @@
-<p>adminviewfeedback works!</p>
+<!-- <div class="admin-background"> -->
+<div class="admin-page-wrapper">
+
+  <div class="page-header">
+    <h2 class="page-title">User Feedback</h2>
+    <p class="page-subtitle">
+      Review feedback submitted by users
+    </p>
+  </div>
+
+  <div class="feedback-grid" *ngIf="feedbacks.length > 0; else noData">
+
+    <div class="feedback-card" *ngFor="let fb of feedbacks">
+
+      <div class="feedback-header">
+
+        <div class="feedback-user">
+          User ID: {{fb.UserId}}
+        </div>
+
+        <div class="feedback-date">
+          {{fb.Date | date:'medium'}}
+        </div>
+
+      </div>
+
+      <div class="feedback-body">
+        {{fb.FeedbackText}}
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #noData>
+    <p class="empty-msg">
+      No feedback available
+    </p>
+  </ng-template>
+
+</div>
