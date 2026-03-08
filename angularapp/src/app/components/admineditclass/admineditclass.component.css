@@ -1,0 +1,31 @@
+@import '../adminaddclass/adminaddclass.component.css';
+
+.button-group{
+
+display:flex;
+
+gap:12px;
+
+margin-top:26px;
+
+}
+
+.btn-secondary{
+
+background:#64748b;
+
+color:white;
+
+border:none;
+
+padding:10px 18px;
+
+border-radius:6px;
+
+}
+
+.btn-secondary:hover{
+
+background:#475569;
+
+}

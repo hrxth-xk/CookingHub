@@ -1,1 +1,548 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+ 
+/* Cooking-Imp class Css */
+ 
+ 
+/* Open dropdown on hover (desktop) */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+ 
+  /* Optional: smoother positioning */
+  .navbar .dropdown .dropdown-menu {
+    margin-top: 0;           /* avoid jump */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s ease-in-out;
+  }
+ 
+  /* Keep menu open when moving into it */
+  .navbar .dropdown-menu:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+ 
+ 
+  .page-title{
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+ 
+  /* Search bar */
+ 
+  .search-input{
+    width:100%;
+    padding:10px;
+    border-radius:20px;
+    border:1px solid #ccc;
+  }
+ 
+  /* Card */
+ 
+  .class-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+  }
+ 
+  /* Hover effect */
+ 
+  .class-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  }
+ 
+  /* Title */
+ 
+  .card-title{
+    color:#060300;
+    font-weight:bold;
+    margin-bottom:15px;
+  }
+ 
+  /* Text */
+ 
+  .class-card p{
+    margin-bottom:6px;
+  }
+ 
+  /* Button */
+ 
+  .apply-btn{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:#454341;
+    color:rgb(255, 255, 255);
+    font-weight:bold;
+    cursor:pointer;
+  }
+ 
+  .apply-btn:hover{
+    background:#0d0c0b;
+  }
+ 
+  body{
+    background-color: #FFCA8B;
+    background-repeat: repeat;
+    background-size: 300px;
+  }
+ 
+ 
+  /* ///////////// feedback component  */
+ 
+  /* PAGE BACKGROUND */
+.feedback-page{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+ 
+/* CARD DESIGN */
+.feedback-card{
+  width:550px;
+  padding:40px;
+  background:rgba(255,255,255,0.95);
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+ 
+/* TITLE */
+.feedback-card h2{
+  text-align:center;
+  margin-bottom:25px;
+  font-weight:600;
+  color:#2b2928;
+}
+ 
+/* LABEL */
+label{
+  font-weight:500;
+  margin-bottom:8px;
+}
+ 
+/* TEXTAREA */
+textarea{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  transition:0.3s;
+}
+ 
+textarea:focus{
+  border-color:#1d1c1b;
+  outline:none;
+  box-shadow:0 0 6px rgba(139,94,60,0.4);
+}
+ 
+/* ERROR TEXT */
+.error-text{
+  color:red;
+  font-size:13px;
+  margin-top:5px;
+}
+ 
+/* BUTTON CONTAINER */
+.btn-container{
+  text-align:center;
+  margin-top:25px;
+}
+ 
+/* SUBMIT BUTTON */
+.submit-btn{
+  background:#2d2b2a;
+  color:white;
+  padding:12px 35px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+ 
+/* BUTTON HOVER */
+.submit-btn:hover{
+  background:#171716;
+  transform:scale(1.05);
+}
+ 
+/* DISABLED BUTTON */
+.submit-btn:disabled{
+  background:#bbb;
+  cursor:not-allowed;
+}
+ 
+/*
+userview feedback css */
+ 
+ 
+/*
+///////// registration CSS */
+/* Registration container */
+.register-card{
+  background-color: #f8f6f2;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: 40px;
+}
+ 
+/* Register button */
+.register-btn{
+  background-color: rgb(79, 76, 76);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+}
+ 
+/* .register-btn:hover{
+  background-color: #333;
+} */
+ 
+ 
+/*
+////////// login Component CSS */
+ 
+/* Off white login card */
+.login-card{
+  background-color: #f8f6f2;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+}
+ 
+/* Show password */
+.show-password{
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+}
+ 
+.show-password:hover{
+  color: black;
+}
+ 
+footer{
+  margin-top: 0;
+}
+ 
+.container{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Sana CSS */
+
+*,
+*::before,
+*::after{
+box-sizing:border-box;
+}
+ 
+body{
+margin:0;
+font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
+background:#f1f5f9;
+color:#1f2937;
+line-height:1.5;
+}
+ 
+h1,h2,h3,h4,h5,h6{
+margin:0;
+font-weight:600;
+}
+ 
+p{
+margin:0;
+}
+ 
+/* =====================================================
+LAYOUT
+===================================================== */
+ 
+.admin-page-wrapper{
+width:92%;
+max-width:1250px;
+margin:40px auto;
+}
+ 
+.page-header{
+margin-bottom:30px;
+}
+ 
+.page-title{
+font-size:28px;
+font-weight:700;
+color:#111827;
+}
+ 
+.page-subtitle{
+font-size:14px;
+color:#6b7280;
+margin-top:4px;
+}
+ 
+/* =====================================================
+CARD DESIGN
+===================================================== */
+ 
+.dashboard-card{
+background:white;
+border-radius:14px;
+padding:28px;
+box-shadow:0 10px 28px rgba(0,0,0,0.08);
+border:1px solid #e5e7eb;
+transition:.2s;
+}
+ 
+.dashboard-card:hover{
+transform:translateY(-2px);
+box-shadow:0 14px 30px rgba(0,0,0,0.1);
+}
+ 
+/* =====================================================
+FORM
+===================================================== */
+ 
+.form-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+ 
+.form-field{
+display:flex;
+flex-direction:column;
+}
+ 
+.form-field.full{
+grid-column:span 2;
+}
+ 
+label{
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#374151;
+}
+ 
+input,
+textarea,
+select{
+padding:11px 12px;
+border-radius:6px;
+border:1px solid #d1d5db;
+font-size:14px;
+background:white;
+transition:.15s;
+}
+ 
+input:focus,
+textarea:focus,
+select:focus{
+outline:none;
+border-color:#6366f1;
+box-shadow:0 0 0 2px rgba(99,102,241,.15);
+}
+ 
+/* =====================================================
+BUTTONS
+===================================================== */
+ 
+button{
+cursor:pointer;
+transition:.2s;
+}
+ 
+.btn-primary{
+background:#111827;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+}
+ 
+.btn-primary:hover{
+background:#000;
+}
+ 
+.btn-secondary{
+background:#64748b;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+}
+ 
+.btn-edit{
+background:white;
+border:1px solid #2563eb;
+color:#2563eb;
+padding:6px 12px;
+border-radius:4px;
+}
+ 
+.btn-delete{
+background:#2563eb;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:4px;
+}
+ 
+.btn-approve{
+background:#22c55e;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:4px;
+}
+ 
+.btn-reject{
+background:#ef4444;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:4px;
+}
+ 
+/* =====================================================
+TABLE
+===================================================== */
+ 
+.table-wrapper{
+overflow-x:auto;
+}
+ 
+.admin-table{
+width:100%;
+border-collapse:collapse;
+font-size:14px;
+}
+ 
+.admin-table thead{
+background:#f8fafc;
+}
+ 
+.admin-table th{
+padding:12px;
+text-align:left;
+font-weight:600;
+border-bottom:1px solid #e5e7eb;
+}
+ 
+.admin-table td{
+padding:12px;
+border-bottom:1px solid #e5e7eb;
+}
+ 
+.admin-table tbody tr:hover{
+background:#f9fafb;
+}
+ 
+.action-buttons{
+display:flex;
+gap:8px;
+}
+ 
+/* =====================================================
+SEARCH
+===================================================== */
+ 
+.table-tools{
+margin-bottom:18px;
+}
+ 
+.search-box{
+width:180px;
+padding:8px 10px;
+border-radius:6px;
+border:1px solid #d1d5db;
+}
+ 
+/* =====================================================
+FEEDBACK CARDS
+===================================================== */
+ 
+.feedback-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
+}
+ 
+.feedback-card{
+background:white;
+padding:20px;
+border-radius:10px;
+border-left:4px solid #6366f1;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+ 
+.feedback-header{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+color:#6b7280;
+margin-bottom:10px;
+}
+ 
+.feedback-user{
+font-weight:600;
+}
+ 
+.feedback-body{
+font-size:14px;
+}
+ 
+/* =====================================================
+EMPTY
+===================================================== */
+ 
+.empty-msg{
+padding:16px;
+color:#6b7280;
+}
+ 
+/* =====================================================
+RESPONSIVE
+===================================================== */
+ 
+@media(max-width:900px){
+ 
+.form-grid{
+grid-template-columns:1fr;
+}
+ 
+.form-field.full{
+grid-column:span 1;
+}
+ 
+.admin-page-wrapper{
+width:95%;
+}
+ 
+}
+/* .admin-background{
+ 
+    min-height:100vh;
+   
+    background:
+    linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #eef2ff 40%,
+    #e0e7ff 100%
+    );
+   
+    padding-bottom:40px;
+   
+    } */
