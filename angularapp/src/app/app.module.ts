@@ -24,6 +24,7 @@ import { UserviewfeedbackComponent } from './components/userviewfeedback/uservie
 import { CookingImpComponent } from './components/cooking-imp/cooking-imp.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
+import { AuthguardComponent } from './components/authguard/authguard.component';
 
  
 @NgModule({
@@ -48,6 +49,7 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
     CookingImpComponent,
     ErrorComponent,
     ChatbotComponent,
+    AuthguardComponent,
   ],
   imports: [
     BrowserModule,
