@@ -4,7 +4,8 @@ import { CookingClass } from '../../models/cooking-class.model';
 import { Router } from '@angular/router';
  
 @Component({
-  templateUrl: './userviewclass.component.html'
+  templateUrl: './userviewclass.component.html',
+  styleUrls: ['./userviewclass.component.css']
 })
 export class UserviewclassComponent implements OnInit {
   classes: CookingClass[] = [];

@@ -1,0 +1,93 @@
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  .class-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.class-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.class-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  gap: 10px;
+}
+
+.class-card-title {
+  font-family: var(--maple-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--maple-ink-light);
+  margin: 0;
+}
+
+.skill-badge {
+  background: rgba(63, 29, 145, 0.12);
+  color: var(--maple-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--maple-radius-pill);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.class-card-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(118, 85, 66, 0.08);
+  font-size: 0.88rem;
+  color: var(--maple-ink-light);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--maple-muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fee-value {
+  font-weight: 700;
+  color: var(--maple-ink);
+  font-size: 1rem;
+}
+
+.class-apply-btn {
+  width: 100%;
+  padding: 11px 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .class-grid {
+    grid-template-columns: 1fr;
+  }
+}

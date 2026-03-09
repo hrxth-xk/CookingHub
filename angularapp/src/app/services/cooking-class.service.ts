@@ -7,8 +7,7 @@ import { AuthService } from './auth.service';
  
 @Injectable({ providedIn: 'root' })
 export class CookingClassService {
-  //private apiUrl = 'https://8080-aeecccebfeecdabeebedccecabfaedfdcf.premiumproject.examly.io';
-  public apiUrl = 'https://8080-eafbccabcfdcbecdabeebedccecabfaedfdcf.premiumproject.examly.io';
+  public apiUrl = '';
 
 
   
@@ -28,15 +27,15 @@ export class CookingClassService {
     return this.http.get<CookingClass>(`${this.apiUrl}/api/cookingClass/${classId}`, { headers: this.getHeaders() });
   }
  
-  addCookingClass(cooking: CookingClass): Observable<CookingClass> {
-    return this.http.post<CookingClass>(`${this.apiUrl}/api/cookingClass`, cooking, { headers: this.getHeaders() });
+  addCookingClass(cooking: CookingClass): Observable<string> {
+    return this.http.post(`${this.apiUrl}/api/cookingClass`, cooking, { headers: this.getHeaders(), responseType: 'text' });
   }
-  updateCookingClass(classId: string, cooking: CookingClass): Observable<CookingClass> {
-    return this.http.put<CookingClass>(`${this.apiUrl}/api/cookingClass/${classId}`, cooking, { headers: this.getHeaders() });
+  updateCookingClass(classId: string, cooking: CookingClass): Observable<string> {
+    return this.http.put(`${this.apiUrl}/api/cookingClass/${classId}`, cooking, { headers: this.getHeaders(), responseType: 'text' });
   }
  
-  deleteCookingClass(classId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/api/cookingClass/${classId}`, { headers: this.getHeaders() });
+  deleteCookingClass(classId: string): Observable<string> {
+    return this.http.delete(`${this.apiUrl}/api/cookingClass/${classId}`, { headers: this.getHeaders(), responseType: 'text' });
   }
  
   getAllCookingClassRequests(): Observable<CookingClassRequest[]> {
@@ -53,12 +52,12 @@ export class CookingClassService {
       responseType: 'text'          // ✅ Tells Angular to expect plain text, not JSON
     });
   }
-  updateCookingClassRequest(requestId: string, request: CookingClassRequest): Observable<CookingClassRequest> {
-    return this.http.put<CookingClassRequest>(`${this.apiUrl}/api/cookingClassRequest/${requestId}`, request, { headers: this.getHeaders() });
+  updateCookingClassRequest(requestId: string, request: CookingClassRequest): Observable<string> {
+    return this.http.put(`${this.apiUrl}/api/cookingClassRequest/${requestId}`, request, { headers: this.getHeaders(), responseType: 'text' });
   }
  
-  deleteCookingClassRequest(requestId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/api/cookingClassRequest/${requestId}`, { headers: this.getHeaders() });
+  deleteCookingClassRequest(requestId: string): Observable<string> {
+    return this.http.delete(`${this.apiUrl}/api/cookingClassRequest/${requestId}`, { headers: this.getHeaders(), responseType: 'text' });
   }
 
   sendChatMessage(message: string): Observable<any> {

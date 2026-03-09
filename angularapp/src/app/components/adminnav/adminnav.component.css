@@ -1,123 +1,93 @@
-.admin-navbar{
+.maple-navbar {
+  background: var(--maple-bg, #ebc38f);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  min-height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    background:linear-gradient(135deg,#1e293b,#0f172a);
-    
-    padding:14px 25px;
-    
-    box-shadow:0 6px 20px rgba(0,0,0,.25);
-    
-    width:100%;
-    
-    }
-    
-    .navbar-brand{
-    
-    color:white !important;
-    
-    font-size:18px;
-    
-    font-weight:700;
-    
-    letter-spacing:.5px;
-    
-    }
-    
-    .admin-tag{
-    
-    background:#6366f1;
-    
-    font-size:11px;
-    
-    padding:2px 6px;
-    
-    border-radius:4px;
-    
-    margin-left:6px;
-    
-    }
-    
-    .nav-link{
-    
-    color:#e2e8f0 !important;
-    
-    font-weight:500;
-    
-    margin-right:15px;
-    
-    transition:.2s;
-    
-    }
-    
-    .nav-link:hover{
-    
-    color:#c7d2fe !important;
-    
-    }
-    
-    .dropdown-menu{
-    
-    border-radius:10px;
-    
-    border:none;
-    
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-    
-    padding:6px;
-    
-    }
-    
-    .dropdown-item{
-    
-    padding:10px 16px;
-    
-    font-size:14px;
-    
-    }
-    
-    .dropdown-item:hover{
-    
-    background:#eef2ff;
-    
-    }
-    
-    .admin-user{
-    
-    display:flex;
-    
-    align-items:center;
-    
-    gap:14px;
-    
-    color:white;
-    
-    font-size:14px;
-    
-    }
-    
-    .welcome-text{
-    
-    font-weight:600;
-    
-    }
-    
-    .logout-btn{
-    
-    background:#ef4444;
-    
-    border:none;
-    
-    padding:6px 14px;
-    
-    color:white;
-    
-    border-radius:6px;
-    
-    font-size:13px;
-    
-    }
-    
-    .logout-btn:hover{
-    
-    background:#dc2626;
-    
-    }
+.nav-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  color: var(--maple-accent, #3f1d91);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+}
+
+.brand span {
+  font-family: var(--maple-font-heading, 'Outfit', sans-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.brand small {
+  font-family: var(--maple-font-heading, 'Outfit', sans-serif);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: #4f2f20;
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: none;
+  border: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(63, 29, 145, 0.14);
+  color: var(--maple-accent, #3f1d91);
+  box-shadow: inset 0 0 0 1px rgba(63, 29, 145, 0.22);
+  transform: translateY(-1px);
+}
+
+.cta-link {
+  background: var(--maple-accent, #3f1d91);
+  color: #fff !important;
+  box-shadow: 0 8px 16px rgba(63, 29, 145, 0.25);
+  cursor: pointer;
+}
+
+.cta-link:hover {
+  background: var(--maple-accent-hover, #2f1572) !important;
+  color: #fff !important;
+}
+
+.nav-welcome {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--maple-muted, #765542);
+  padding: 0 8px;
+}
+
+@media (max-width: 860px) {
+  .nav-shell { padding: 10px 12px; }
+  .nav-links { gap: 3px; }
+  .nav-link { font-size: 0.78rem; padding: 6px 10px; }
+}

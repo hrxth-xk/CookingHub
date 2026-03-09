@@ -1,54 +1,34 @@
-<!-- <div class="container mt-4">
-    <h3>My Feedback</h3>
-    <div *ngIf="feedbacks.length > 0; else noData">
-      <div class="card mb-2" *ngFor="let fb of feedbacks">
-        <div class="card-body">
-          <p>{{fb.FeedbackText}}</p>
-          <small class="text-muted">{{fb.Date | date}}</small>
-          <button class="btn btn-sm btn-danger float-right" (click)="deleteFeedback(fb.FeedbackId!)">Delete</button>
-        </div>
-      </div>
-    </div>
-    <ng-template #noData>
-      <p class="text-muted">No data found</p>
-    </ng-template>
-  </div> -->
+<div class="admin-page-wrapper">
 
-
-  <div class="feedback-container">
- 
+  <div class="page-header">
     <h2 class="page-title">My Feedback</h2>
-   
-    <div *ngIf="feedbacks.length > 0; else noData">
-   
-      <div class="feedback-card" *ngFor="let fb of feedbacks">
-   
-        <div class="feedback-content">
-   
-          <p class="feedback-text">{{fb.FeedbackText}}</p>
-   
-          <div class="feedback-footer">
-   
-            <span class="feedback-date">
-              {{fb.Date | date}}
-            </span>
-   
-            <button class="delete-btn"
-                    (click)="deleteFeedback(fb.FeedbackId)">
-              Delete
-            </button>
-   
-          </div>
-   
-        </div>
-   
-      </div>
-   
-    </div>
-   
-    <ng-template #noData>
-      <p class="no-data">No feedback found</p>
-    </ng-template>
-   
+    <p class="page-subtitle">Review and manage your submitted feedback</p>
   </div>
+
+  <div class="feedback-grid" *ngIf="feedbacks.length > 0; else noData">
+
+    <div class="feedback-card" *ngFor="let fb of feedbacks">
+
+      <div class="feedback-body">
+        {{ fb.FeedbackText }}
+      </div>
+
+      <div class="feedback-footer">
+        <span class="feedback-date">{{ fb.Date | date:'mediumDate' }}</span>
+        <button class="btn-delete" (click)="deleteFeedback(fb.FeedbackId)">
+          Delete
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #noData>
+    <div class="dashboard-card">
+      <p class="empty-msg">No feedback found. Share your experience!</p>
+    </div>
+  </ng-template>
+
+</div>
    

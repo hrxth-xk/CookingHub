@@ -81,7 +81,8 @@ import { AuthService } from '../../services/auth.service';
 import { CookingClassRequest } from '../../models/cooking-class-request.model';
 
 @Component({
-  templateUrl: './useraddrequest.component.html'
+  templateUrl: './useraddrequest.component.html',
+  styleUrls: ['./useraddrequest.component.css']
 })
 export class UseraddrequestComponent implements OnInit {
   requestForm: FormGroup;
@@ -106,13 +107,19 @@ export class UseraddrequestComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUser = this.auth.currentUserValue;
-    if (currentUser) {
-      this.userId = currentUser.id;
+    if (currentUser && currentUser.id) {
+      const parsed = Number(currentUser.id);
+      this.userId = isNaN(parsed) || parsed === 0 ? 0 : parsed;
     }
+    console.log('[UseraddrequestComponent] userId resolved to:', this.userId);
   }
 
   onSubmit() {
-    if (this.requestForm.invalid || this.userId === 0) return;
+    if (this.requestForm.invalid) return;
+    if (this.userId === 0) {
+      alert('User ID not found. Please log out and log back in.');
+      return;
+    }
 
     const payload = {
       userId: parseInt(this.userId.toString(), 10),

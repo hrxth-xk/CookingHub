@@ -1,50 +1,36 @@
-<!-- <div class="container mt-4">
-    <h3>Add Feedback</h3>
+<div class="feedback-page">
+  <div class="dashboard-card feedback-form-card">
+
+    <div class="page-header" style="text-align: center;">
+      <h2 class="page-title">Share Your Feedback</h2>
+      <p class="page-subtitle">Let us know about your experience with Maple</p>
+    </div>
+
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
+
+      <div class="form-field">
         <label>Your Feedback</label>
-        <textarea class="form-control" rows="4" formControlName="FeedbackText"></textarea>
-        <div *ngIf="feedbackForm.get('FeedbackText')?.invalid && feedbackForm.get('FeedbackText')?.touched" class="text-danger">
+        <textarea
+          rows="5"
+          placeholder="Tell us what you loved, or what we can improve..."
+          formControlName="FeedbackText">
+        </textarea>
+        <div class="error"
+          *ngIf="feedbackForm.get('FeedbackText')?.invalid && feedbackForm.get('FeedbackText')?.touched">
           Feedback text is required
         </div>
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit</button>
-    </form>
-  </div> -->
 
-  <div class="feedback-page">
-    <div class="feedback-card">
-   
-      <h2>Add Feedback</h2>
-   
-      <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
-   
-        <div class="form-group">
-          <label>Your Feedback</label>
-   
-          <textarea
-            rows="5"
-            class="form-control"
-            formControlName="FeedbackText"
-            placeholder="Write your feedback here...">
-          </textarea>
-   
-          <div *ngIf="feedbackForm.get('FeedbackText')?.invalid && feedbackForm.get('FeedbackText')?.touched"
-               class="error-text">
-            Feedback text is required
-          </div>
-        </div>
-   
-        <div class="btn-container">
-          <button type="submit"
-                  class="submit-btn"
-                  [disabled]="feedbackForm.invalid">
-            Submit Feedback
-          </button>
-        </div>
-   
-      </form>
-   
-    </div>
+      <div class="form-actions" style="justify-content: center;">
+        <button type="submit"
+          class="btn-maple btn-maple-solid"
+          [disabled]="feedbackForm.invalid">
+          Submit Feedback
+        </button>
+      </div>
+
+    </form>
+
   </div>
+</div>
    

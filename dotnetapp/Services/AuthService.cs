@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using dotnetapp.Data;
 using dotnetapp.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -105,6 +107,10 @@ namespace dotnetapp.Services
             // Get user roles
             var userRoles = await userManager.GetRolesAsync(user);
 
+            // Look up the custom Users table to get the integer UserId
+            var dbUser = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == model.Email);
+
             // Build claims
             var claims = new List<Claim>
             {
@@ -112,6 +118,11 @@ namespace dotnetapp.Services
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
+
+            if (dbUser != null)
+            {
+                claims.Add(new Claim("UserId", dbUser.UserId.ToString()));
+            }
 
             foreach (var role in userRoles)
             {

@@ -1,79 +1,21 @@
-<!-- <div class="admin-background"> -->
-
-  <!-- <div class="admin-page-wrapper"> -->
-
-<nav class="navbar navbar-expand-lg admin-navbar">
-
-  <div class="container-fluid">
-
-    <a class="navbar-brand" routerLink="/home">
-      Maple <span class="admin-tag">Admin</span>
+<nav class="maple-navbar">
+  <div class="nav-shell">
+    <a class="brand" routerLink="/home" aria-label="Maple Home">
+      <span>MAPLE</span>
+      <small>ADMIN</small>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+      <a routerLink="/admin/add-class" routerLinkActive="active" class="nav-link">Add Class</a>
+      <a routerLink="/admin/view-class" routerLinkActive="active" class="nav-link">Manage Classes</a>
+      <a routerLink="/admin/view-requests" routerLinkActive="active" class="nav-link">Requests</a>
+      <a routerLink="/admin/view-feedbacks" routerLinkActive="active" class="nav-link">Feedbacks</a>
 
-    <div class="collapse navbar-collapse" id="adminNavbar">
-
-      <ul class="navbar-nav me-auto admin-nav-links">
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home">Home</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-            Cooking Classes
-          </a>
-
-          <ul class="dropdown-menu">
-
-            <li>
-              <a class="dropdown-item" routerLink="/admin/add-class">
-                ➕ Add New Class
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" routerLink="/admin/view-class">
-                📋 Manage Classes
-              </a>
-            </li>
-
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/view-requests">
-            Class Requests
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/view-feedbacks">
-            Feedbacks
-          </a>
-        </li>
-
-      </ul>
-
-      <div class="admin-user">
-
-        <span class="welcome-text" *ngIf="user">
-          Welcome {{user.username}}
-        </span>
-
-        <button class="logout-btn" (click)="logout()">
-          Logout
-        </button>
-
-      </div>
-
+      <span class="nav-welcome" *ngIf="user">{{ user.username }}</span>
+      <button class="nav-link cta-link" (click)="logout()">Logout</button>
     </div>
-
   </div>
-
 </nav>
 
 

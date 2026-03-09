@@ -4,7 +4,8 @@ import { AuthService } from '../../services/auth.service';
  
 @Component({
   selector: 'app-usernav',
-  templateUrl: './usernav.component.html'
+  templateUrl: './usernav.component.html',
+  styleUrls: ['./usernav.component.css']
 })
 export class UsernavComponent {
   user: any;

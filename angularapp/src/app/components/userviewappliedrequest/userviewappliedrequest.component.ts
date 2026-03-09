@@ -4,7 +4,8 @@ import { AuthService } from '../../services/auth.service';
 import { forkJoin } from 'rxjs';
  
 @Component({
-  templateUrl: './userviewappliedrequest.component.html'
+  templateUrl: './userviewappliedrequest.component.html',
+  styleUrls: ['./userviewappliedrequest.component.css']
 })
 export class UserviewappliedrequestComponent implements OnInit {
   requests: any[] = [];

@@ -1,31 +1,20 @@
-  
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" routerLink="/home">Maple (User)</a>
+<nav class="maple-navbar">
+  <div class="nav-shell">
+    <a class="brand" routerLink="/home" aria-label="Maple Home">
+      <span>MAPLE</span>
+      <small>STUDIO</small>
+    </a>
 
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-      <a class="nav-item nav-link" routerLink="/user/cooking-imp">Importance of Cooking</a>
-      <a class="nav-item nav-link" routerLink="/user/view-classes">Cooking Classes</a>
-      <a class="nav-item nav-link" routerLink="/user/my-requests">Applied Class Requests</a>
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+      <a routerLink="/user/cooking-imp" routerLinkActive="active" class="nav-link">Why Cook</a>
+      <a routerLink="/user/view-classes" routerLinkActive="active" class="nav-link">Classes</a>
+      <a routerLink="/user/my-requests" routerLinkActive="active" class="nav-link">My Requests</a>
+      <a routerLink="/user/add-feedback" routerLinkActive="active" class="nav-link">Post Feedback</a>
+      <a routerLink="/user/my-feedbacks" routerLinkActive="active" class="nav-link">My Feedbacks</a>
 
-      <!-- Dropdown -->
-      <div class="nav-item dropdown">
-        <!-- IMPORTANT: Use data-bs-toggle for Bootstrap 5; use data-toggle for Bootstrap 4 -->
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-          Feedback
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="/user/add-feedback">Post Feedback</a>
-          <a class="dropdown-item" routerLink="/user/my-feedbacks">My Feedbacks</a>
-        </div>
-      </div>
-
-      <a class="nav-item nav-link" style="cursor:pointer;" (click)="logout()">Logout</a>
+      <span class="nav-welcome" *ngIf="user">{{ user.username }}</span>
+      <button class="nav-link cta-link" (click)="logout()">Logout</button>
     </div>
-
-    <span class="navbar-text text-white" *ngIf="user">
-      Welcome {{user.username}} ({{user.role}})
-    </span>
   </div>
 </nav>

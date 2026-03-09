@@ -1,84 +1,49 @@
- <!-- <div class="container mt-4">
-    <h3>Available Classes</h3>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search by Class Name" [(ngModel)]="searchText" (input)="filter()">
-    </div>
-    <table class="table table-bordered" *ngIf="filteredClasses.length > 0; else noData">
-      <thead>
-        <tr>
-          <th>Class Name</th>
-          <th>Cuisine</th>
-          <th>Chef</th>
-          <th>Location</th>
-          <th>Duration</th>
-          <th>Fee</th>
-          <th>Skill Level</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let c of filteredClasses">
-          <td>{{c.ClassName}}</td>
-          <td>{{c.CuisineType}}</td>
-          <td>{{c.ChefName}}</td>
-          <td>{{c.Location}}</td>
-          <td>{{c.DurationInHours}} hrs</td>
-          <td>{{c.Fee | currency}}</td>
-          <td>{{c.SkillLevel}}</td>
-          <td><button class="btn btn-sm btn-primary" (click)="apply(c.CookingClassId)">Apply</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <ng-template #noData>
-      <p class="text-muted">Oops! No records found</p>
-    </ng-template>
-  </div> 
- -->
+<div class="admin-page-wrapper">
 
- <div class="container mt-4">
- 
-  <h2 class="page-title">Available Classes</h2>
- 
-  <!-- Search -->
-  <div class="mb-4">
+  <div class="page-header">
+    <h2 class="page-title">Available Classes</h2>
+    <p class="page-subtitle">Browse chef-led cooking experiences and apply to join</p>
+  </div>
+
+  <div class="table-tools">
     <input
       type="text"
-      class="search-input"
-      placeholder="Search by Class Name"
+      class="search-box"
+      placeholder="Search by class name..."
       [(ngModel)]="searchText"
-      (input)="filter()"
-    />
+      (input)="filter()" />
   </div>
- 
-  <!-- Cards -->
-  <div class="row" *ngIf="filteredClasses.length > 0; else noData">
- 
-    <div class="col-md-4 mb-4" *ngFor="let c of filteredClasses">
- 
-      <div class="class-card">
- 
-        <h5 class="card-title">{{c.ClassName}}</h5>
- 
-        <p>🍽 <b>Cuisine:</b> {{c.CuisineType}}</p>
-        <p>👨‍🍳 <b>Chef:</b> {{c.ChefName}}</p>
-        <p>📍 <b>Location:</b> {{c.Location}}</p>
-        <p>⏰ <b>Duration:</b> {{c.DurationInHours}} hrs</p>
-        <p>💰 <b>Fee:</b> {{c.Fee | currency}}</p>
-        <p>⭐ <b>Skill Level:</b> {{c.SkillLevel}}</p>
- 
-        <button class="apply-btn" (click)="apply(c.CookingClassId)">
-          Apply
-        </button>
- 
+
+  <div class="class-grid" *ngIf="filteredClasses.length > 0; else noData">
+
+    <div class="class-card dashboard-card" *ngFor="let c of filteredClasses">
+
+      <div class="class-card-header">
+        <h3 class="class-card-title">{{ c.ClassName }}</h3>
+        <span class="skill-badge">{{ c.SkillLevel }}</span>
       </div>
- 
+
+      <div class="class-card-details">
+        <div class="detail-row"><span class="detail-label">🍽️ Cuisine</span><span>{{ c.CuisineType }}</span></div>
+        <div class="detail-row"><span class="detail-label">👨‍🍳 Chef</span><span>{{ c.ChefName }}</span></div>
+        <div class="detail-row"><span class="detail-label">📍 Location</span><span>{{ c.Location }}</span></div>
+        <div class="detail-row"><span class="detail-label">⏱️ Duration</span><span>{{ c.DurationInHours }} hrs</span></div>
+        <div class="detail-row"><span class="detail-label">💰 Fee</span><span class="fee-value">{{ c.Fee | currency }}</span></div>
+      </div>
+
+      <button class="btn-maple btn-maple-solid class-apply-btn" (click)="apply(c.CookingClassId)">
+        Apply Now
+      </button>
+
     </div>
- 
+
   </div>
- 
+
   <ng-template #noData>
-    <p>No classes available</p>
+    <div class="dashboard-card">
+      <p class="empty-msg">No classes available at the moment.</p>
+    </div>
   </ng-template>
- 
+
 </div>
  

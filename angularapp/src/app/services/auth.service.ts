@@ -5,8 +5,7 @@ import { map } from 'rxjs/operators';
  
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  //private apiUrl = 'https://8080-aeecccebfeecdabeebedccecabfaedfdcf.premiumproject.examly.io';
-  public apiUrl = 'https://8080-eafbccabcfdcbecdabeebedccecabfaedfdcf.premiumproject.examly.io';
+  public apiUrl = '';
   private authApiUrl = `${this.apiUrl}/api/authentication`;
 
  
@@ -73,30 +72,30 @@ export class AuthService {
 
     const sub = (p.sub ?? p.jti ?? '')?.toString();
 
-    const userId = (p.UserId ?? '')?.toString();   // ✅ ADD THIS
+    const userId = (p.UserId ?? p.userId ?? undefined);
 
     return {
-      role: role?.trim(),
-      email: email?.trim(),
-      name: name?.trim(),
-      sub,
-      userId: userId?.trim(),   // ✅ ADD THIS
+      role: role?.trim() || undefined,
+      email: email?.trim() || undefined,
+      name: name?.trim() || undefined,
+      sub: sub || undefined,
+      userId: userId ? userId.toString().trim() : undefined,
     };
   }
  
   private repairUserIfMissingRole(user: any) {
     if (!user) return null;
-    if (user.role && typeof user.role === 'string' && user.role.length > 0) return user;
     if (!user.token) return user;
 
     const claims = this.extractFromToken(user.token);
     const normalizedRole = claims.role ? claims.role.toLowerCase() : undefined;
 
+    // Always re-derive id from token claims to ensure it's a valid numeric UserId
     const repaired = {
-      id: claims.userId ?? user.id ?? claims.sub ?? null,  // ✅ CHANGED
+      id: claims.userId ?? user.id ?? claims.sub ?? null,
       email: user.email ?? claims.email ?? null,
       username: user.username ?? claims.name ?? null,
-      role: normalizedRole,
+      role: normalizedRole || user.role || undefined,
       token: user.token,
     };
 

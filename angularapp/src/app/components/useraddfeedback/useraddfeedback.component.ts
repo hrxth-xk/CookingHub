@@ -5,7 +5,8 @@ import { FeedbackService } from '../../services/feedback.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  templateUrl: './useraddfeedback.component.html'
+  templateUrl: './useraddfeedback.component.html',
+  styleUrls: ['./useraddfeedback.component.css']
 })
 export class UseraddfeedbackComponent implements OnInit {
   feedbackForm: FormGroup;
