@@ -1,6 +1,6 @@
 export class Feedback {
     FeedbackId?: number;
-    UserId:number;
-    FeedbackText: string;
-    Date: Date;
+    UserId!: number;
+    FeedbackText = '';
+    Date!: Date;
 }

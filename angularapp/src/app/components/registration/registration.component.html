@@ -1,159 +1,93 @@
-<!-- <div class="container mt-4">
-    <div class="row justify-content-center">
-      <div class="col-md-5">
-        <h3>Registration</h3>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
+<section class="maple-register-page">
+  <div class="register-shell">
+    <header class="register-head">
+      <p class="eyebrow">Join The Maple Studio</p>
+      <h1>Create Your Maple Account</h1>
+      <p>Unlock chef-led classes, polished scheduling, and a premium dashboard for your cooking growth.</p>
+    </header>
+
+    <div class="register-card">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="field-grid">
+          <div class="field-block full">
             <label>Email</label>
-            <input type="email" class="form-control" formControlName="Email">
+            <input type="email" class="form-control" formControlName="Email" placeholder="you@maplestudio.com">
             <div class="text-danger" *ngIf="registerForm.get('Email')?.invalid && registerForm.get('Email')?.touched">
               Valid email required
             </div>
           </div>
-          <div class="form-group">
+
+          <div class="field-block">
             <label>Password</label>
-            <input type="password" class="form-control" formControlName="Password">
+            <input type="password" class="form-control" formControlName="Password" placeholder="At least 6 characters">
             <div class="text-danger" *ngIf="registerForm.get('Password')?.invalid && registerForm.get('Password')?.touched">
               Password must be at least 6 characters
             </div>
+          </div>
 
-            <div class="input-group">
-              <label>Confirm Password</label>
-              <input 
-                type="password"
-                formControlName="ConfirmPassword"
-                placeholder="Confirm password"
-              >
-            </div>
-            
-          </div>
-          <div class="form-group">
-            <label>Username</label>
-            <input type="text" class="form-control" formControlName="Username">
-            <div class="text-danger" *ngIf="registerForm.get('Username')?.invalid && registerForm.get('Username')?.touched">
-              Username required
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Mobile Number</label>
-            <input type="text" class="form-control" formControlName="MobileNumber">
-            <div class="text-danger" *ngIf="registerForm.get('MobileNumber')?.invalid && registerForm.get('MobileNumber')?.touched">
-              Enter 10-digit mobile number
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Role</label>
-            <select class="form-control" formControlName="UserRole">
-              <option value="User">User</option>
-              <option value="Admin">Admin</option>
-            </select>
-          </div>
-          <div class="text-danger" *ngIf="error">{{error}}</div>
-          <button type="submit" class="btn btn-primary mt-2" [disabled]="registerForm.invalid">Register</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
- -->
-
-
- <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
- 
-      <!-- Registration Card -->
-      <div class="register-card p-4">
- 
-        <h3 class="text-center mb-4">Registration</h3>
- 
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
- 
-          <!-- Email -->
-          <div class="mb-3">
-            <label>Email</label>
-            <input type="email" class="form-control" formControlName="Email">
-            <div class="text-danger"
-              *ngIf="registerForm.get('Email')?.invalid && registerForm.get('Email')?.touched">
-              Valid email required
-            </div>
-          </div>
- 
-          <!-- Password -->
-          <div class="mb-3">
-            <label>Password</label>
-            <input type="password" class="form-control" formControlName="Password">
-            <div class="text-danger"
-              *ngIf="registerForm.get('Password')?.invalid && registerForm.get('Password')?.touched">
-              Password must be at least 6 characters
-            </div>
-          </div>
- 
-          <!-- Confirm Password -->
-          <div class="mb-3">
+          <div class="field-block">
             <label>Confirm Password</label>
-            <input
-              type="password"
-              class="form-control"
-              formControlName="ConfirmPassword"
-              placeholder="Confirm password">
- 
+            <input type="password" class="form-control" formControlName="ConfirmPassword" placeholder="Repeat password">
             <div class="text-danger"
               *ngIf="registerForm.get('ConfirmPassword')?.value !== registerForm.get('Password')?.value && registerForm.get('ConfirmPassword')?.touched">
               Passwords do not match
             </div>
           </div>
- 
-          <!-- Username -->
-          <div class="mb-3">
+
+          <div class="field-block">
             <label>Username</label>
-            <input type="text" class="form-control" formControlName="Username">
-            <div class="text-danger"
-              *ngIf="registerForm.get('Username')?.invalid && registerForm.get('Username')?.touched">
+            <input type="text" class="form-control" formControlName="Username" placeholder="How should we call you?">
+            <div class="text-danger" *ngIf="registerForm.get('Username')?.invalid && registerForm.get('Username')?.touched">
               Username required
             </div>
           </div>
- 
-          <!-- Mobile -->
-          <div class="mb-3">
+
+          <div class="field-block">
             <label>Mobile Number</label>
-            <input type="text" class="form-control" formControlName="MobileNumber">
-            <div class="text-danger"
-              *ngIf="registerForm.get('MobileNumber')?.invalid && registerForm.get('MobileNumber')?.touched">
+            <input type="text" class="form-control" formControlName="MobileNumber" placeholder="10-digit mobile">
+            <div class="text-danger" *ngIf="registerForm.get('MobileNumber')?.invalid && registerForm.get('MobileNumber')?.touched">
               Enter 10-digit mobile number
             </div>
           </div>
- 
-          <!-- Role -->
-          <div class="mb-3">
+
+          <div class="field-block full">
             <label>Role</label>
             <select class="form-control" formControlName="UserRole">
               <option value="User">User</option>
               <option value="Admin">Admin</option>
             </select>
           </div>
- 
-          <div class="text-danger mb-2" *ngIf="error">{{error}}</div>
- 
-          <!-- Register Button -->
-          <button type="submit"
-                  class="btn register-btn w-100"
-                  [disabled]="registerForm.invalid">
+        </div>
+
+        <div class="text-danger register-error" *ngIf="error">{{error}}</div>
+
+        <div class="register-actions">
+          <a routerLink="/login" class="btn-maple btn-maple-light">Already have an account?</a>
+          <button type="submit" class="btn-maple btn-maple-solid" [disabled]="registerForm.invalid">
             Register
           </button>
- 
-        </form>
- 
-      </div>
- 
+        </div>
+      </form>
     </div>
   </div>
-</div>
 
-<footer class="bg-dark text-white text-center py-3">
-  © 2026 Cooking Hub — All Rights Reserved
-</footer>
+  <footer id="contact" class="maple-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Maple Studio</h3>
+        <p>Premium access to the art of cooking.</p>
+      </div>
+      <div>
+        <p><strong>Email:</strong> support@maplehub.com</p>
+        <p><strong>Phone:</strong> +1 555 013 8842</p>
+      </div>
+      <div>
+        <p><strong>Address:</strong> 38 Maple Square, Culinary District</p>
+        <p>© 2026 Maple. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</section>
 
 
  

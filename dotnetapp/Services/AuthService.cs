@@ -127,6 +127,11 @@ namespace dotnetapp.Services
         private string GenerateToken(IEnumerable<Claim> claims)
         {
             var jwtSecret = _configuration["JWT:Secret"];
+            if (string.IsNullOrWhiteSpace(jwtSecret))
+            {
+                throw new InvalidOperationException("JWT:Secret is missing from configuration.");
+            }
+
             var authSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(jwtSecret));
 

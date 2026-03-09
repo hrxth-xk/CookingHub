@@ -1,10 +1,14 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">  
-  <div class="container">
-    <a class="navbar-brand" routerLink="/home">Cooking Hub</a>
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-      <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-      <a class="nav-item nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+<nav class="maple-navbar">
+  <div class="nav-shell">
+    <a class="brand" routerLink="/home" aria-label="Maple Home">
+      <span>MAPLE</span>
+      <small>STUDIO</small>
+    </a>
+
+    <div class="nav-links">
+      <a [routerLink]="['/home']" fragment="faq" class="nav-link">Home</a>
+      <a routerLink="/login" routerLinkActive="active" class="nav-link">Log In</a>
+      <a routerLink="/register" routerLinkActive="active" class="nav-link cta-link">Sign Up</a>
     </div>
   </div>
 </nav>

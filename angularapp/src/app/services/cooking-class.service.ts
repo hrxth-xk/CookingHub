@@ -31,8 +31,6 @@ export class CookingClassService {
   addCookingClass(cooking: CookingClass): Observable<CookingClass> {
     return this.http.post<CookingClass>(`${this.apiUrl}/api/cookingClass`, cooking, { headers: this.getHeaders() });
   }
-w
-
   updateCookingClass(classId: string, cooking: CookingClass): Observable<CookingClass> {
     return this.http.put<CookingClass>(`${this.apiUrl}/api/cookingClass/${classId}`, cooking, { headers: this.getHeaders() });
   }

@@ -4,12 +4,21 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using dotnetapp.Data;
 using dotnetapp.Models;
 using dotnetapp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var jwtSecret = builder.Configuration["JWT:Secret"];
+if (string.IsNullOrWhiteSpace(jwtSecret))
+{
+    throw new InvalidOperationException("JWT:Secret is missing. Set it in appsettings or environment variables.");
+}
+
+var jwtIssuer = builder.Configuration["JWT:ValidIssuer"];
+var jwtAudience = builder.Configuration["JWT:ValidAudience"];
 
 // ============================================================
 // 1. DATABASE CONFIGURATION
@@ -48,10 +57,10 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
-        ValidAudience = builder.Configuration["JWT:ValidAudience"],
-        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+        ValidAudience = jwtAudience,
+        ValidIssuer = jwtIssuer,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"] ?? string.Empty))
+            Encoding.UTF8.GetBytes(jwtSecret))
     };
 });
 
@@ -97,22 +106,10 @@ builder.Services.AddSwaggerGen(c =>
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
         Scheme = "bearer",
-        BearerFormat = "JWT",
-        Reference = new OpenApiReference
-        {
-            Type = ReferenceType.SecurityScheme,
-            Id = "Bearer"
-        }
+        BearerFormat = "JWT"
     };
 
     c.AddSecurityDefinition("Bearer", securityScheme);
-
-    // Require Bearer token for all operations (you can scope this per operation if needed)
-    var securityRequirement = new OpenApiSecurityRequirement
-    {
-        { securityScheme, Array.Empty<string>() }
-    };
-    c.AddSecurityRequirement(securityRequirement);
 });
 
 // ============================================================

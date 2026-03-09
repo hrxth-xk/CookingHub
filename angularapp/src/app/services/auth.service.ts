@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
   //private apiUrl = 'https://8080-aeecccebfeecdabeebedccecabfaedfdcf.premiumproject.examly.io';
   public apiUrl = 'https://8080-eafbccabcfdcbecdabeebedccecabfaedfdcf.premiumproject.examly.io';
+  private authApiUrl = `${this.apiUrl}/api/authentication`;
 
  
   private currentUserSubject: BehaviorSubject<any>;
@@ -119,7 +120,7 @@ export class AuthService {
  
   /** REGISTER — if API returns a token, auto-login by decoding and storing role */
   register(user: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/api/register`, user).pipe(
+    return this.http.post<any>(`${this.authApiUrl}/register`, user).pipe(
       map((response) => {
         // Case A: API returns a token like login → decode and persist user
         if (response && response.token) {
@@ -150,7 +151,7 @@ export class AuthService {
  
   /** LOGIN — decode token; persist role/email/name */
   login(login: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/api/login`, login).pipe(
+    return this.http.post<any>(`${this.authApiUrl}/login`, login).pipe(
       map((response) => {
         if (response && response.token) {
           const token = response.token;

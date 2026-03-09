@@ -1,109 +1,71 @@
- <div class="login-hero gradient-anim">
-  <!-- Decorative floating food icons (pure CSS-positioned) -->
-  <div class="decor decor-hat d-none d-md-block" aria-hidden="true"></div>
-  <div class="decor decor-spoon d-none d-md-block" aria-hidden="true"></div>
-  <div class="decor decor-pan d-none d-md-block" aria-hidden="true"></div>
-  <div class="decor decor-leaf d-none d-md-block" aria-hidden="true"></div>
+<section class="maple-auth-page">
+  <div class="auth-shell">
+    <div class="auth-card-wrap">
+      <header class="auth-head">
+        <p class="eyebrow">Maple Member Access</p>
+        <h1>Welcome Back</h1>
+        <p>Sign in and continue your premium culinary learning journey with Maple.</p>
+      </header>
 
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-12 col-sm-10 col-md-7 col-lg-5">
-        <div class="card rounded-4 border-0 login-card glass">
-          <div class="card-body p-4 p-md-5">
-
-            <!-- Brand / Title -->
-            <div class="d-flex align-items-center justify-content-between">
-              <h3 class="m-0 fw-semibold brand-accent">Cooking Hub</h3>
-              <i class="bi bi-egg-fried text-warning fs-3"></i>
-            </div>
-            <p class="mt-2 mb-4 muted">
-              Learn. Cook. Serve.
-              <!-- <span class="role-badges ms-2">
-                <span class="badge text-bg-primary">User</span>
-                <span class="badge text-bg-danger ms-1">Admin</span>
-              </span> -->
-            </p>
-
-            <!-- Form (bindings unchanged) -->
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-              <!-- Email -->
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  [class.is-invalid]="loginForm.get('Email')?.invalid && loginForm.get('Email')?.touched"
-                  formControlName="Email"
-                  placeholder="example@gmail.com" />
-                <div class="invalid-feedback">Valid email required</div>
-              </div>
-
-              <!-- Password -->
-              <!-- <div class="mb-2">
-                <label class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  [class.is-invalid]="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched"
-                  formControlName="Password"
-                  placeholder="Password"
-                  />
-                <div class="invalid-feedback">Password required</div>
-              </div> -->
-              <!-- Password -->
-<div class="mb-2">
-  <label class="form-label">Password</label>
- 
-  <input
-    [type]="showPassword ? 'text' : 'password'"
-    class="form-control"
-    [class.is-invalid]="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched"
-    formControlName="Password"
-    placeholder="Password"
-  />
- 
-  <div class="invalid-feedback">Password required</div>
-</div>
- 
-<!-- Show Password -->
-<div class="show-password mb-3" (click)="togglePassword()">
-  <i class="bi bi-eye"></i> Show Password
-</div>
-
- 
-
-              <!-- Error -->
-              <div class="text-danger small mb-2" *ngIf="error">{{ error }}</div>
-
-              <!-- Actions -->
-              <div class="d-flex align-items-center justify-content-between mt-3">
-                <!-- Back to Register (left) -->
-                <a class="btn btn-outline-secondary btn-pill"
-                   routerLink="/register"
-                   title="Go to Register">
-                  <i class="bi bi-arrow-left me-1"></i>
-                  Back
-                </a>
-
-                <!-- Login (right) -->
-                <button type="submit"
-                        class="btn btn-outline-secondary btn-pill"
-                        [disabled]="loginForm.invalid">
-                  Login
-                  <i class="bi bi-box-arrow-in-right ms-1"></i>
-                </button>
-              </div>
-            </form>
-
-          </div>
+      <div class="auth-card">
+        <div class="card-head">
+          <h2>Log In to Maple</h2>
+          <span>Craft. Learn. Plate.</span>
         </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="field-group">
+            <label>Email</label>
+            <input
+              type="email"
+              class="form-control"
+              [class.is-invalid]="loginForm.get('Email')?.invalid && loginForm.get('Email')?.touched"
+              formControlName="Email"
+              placeholder="you@maplestudio.com" />
+            <div class="invalid-feedback">Valid email required</div>
+          </div>
+
+          <div class="field-group">
+            <label>Password</label>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              [class.is-invalid]="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched"
+              formControlName="Password"
+              placeholder="Your password" />
+            <div class="invalid-feedback">Password required</div>
+          </div>
+
+          <button type="button" class="toggle-password" (click)="togglePassword()">
+            {{ showPassword ? 'Hide password' : 'Show password' }}
+          </button>
+
+          <div class="error-text" *ngIf="error">{{ error }}</div>
+
+          <div class="actions-row">
+            <a class="btn-maple btn-maple-light" routerLink="/register">Create Account</a>
+            <button type="submit" class="btn-maple btn-maple-solid" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</div> 
 
-
-<footer class="bg-dark text-white text-center py-3">
-  © 2026 Cooking Hub — All Rights Reserved
-</footer>
+  <footer id="contact" class="maple-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Maple Studio</h3>
+        <p>Premium access to the art of cooking.</p>
+      </div>
+      <div>
+        <p><strong>Email:</strong> support@maplehub.com</p>
+        <p><strong>Phone:</strong> +1 555 013 8842</p>
+      </div>
+      <div>
+        <p><strong>Address:</strong> 38 Maple Square, Culinary District</p>
+        <p>© 2026 Maple. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</section>
 

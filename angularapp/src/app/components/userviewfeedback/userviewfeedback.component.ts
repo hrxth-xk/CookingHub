@@ -30,7 +30,10 @@ export class UserviewfeedbackComponent implements OnInit {
     });
   }
  
-  deleteFeedback(id: number) {
+  deleteFeedback(id: number | undefined) {
+    if (id == null) {
+      return;
+    }
     if (confirm('Are you sure you want to delete this feedback?')) {
       this.fbService.deleteFeedback(id).subscribe(() => {
         this.loadFeedbacks();

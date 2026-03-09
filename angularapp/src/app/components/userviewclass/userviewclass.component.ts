@@ -26,7 +26,10 @@ export class UserviewclassComponent implements OnInit {
     );
   }
  
-  apply(classId: number) {
+  apply(classId: number | undefined) {
+    if (classId == null) {
+      return;
+    }
     this.router.navigate([`/user/apply/${classId}`]);
   }
 }

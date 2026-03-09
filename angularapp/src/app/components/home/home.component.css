@@ -1,0 +1,289 @@
+.maple-home {
+  --maple-bg: #ebc38f;
+  --maple-bg-soft: #f2d2a5;
+  --maple-cream: #f7e3c7;
+  --maple-ink: #2f1d12;
+  --maple-muted: #765542;
+  --maple-accent: #3f1d91;
+  background: linear-gradient(180deg, #ebc38f 0%, #efcb98 35%, #f4d9b2 100%);
+  color: var(--maple-ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.hero-stage {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  padding: 28px clamp(16px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wordmark {
+  position: absolute;
+  inset: 30px 0 auto;
+  text-align: center;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  letter-spacing: 0.03em;
+  font-size: clamp(8rem, 28vw, 24rem);
+  line-height: 0.84;
+  color: rgba(247, 227, 199, 0.95);
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(20px, 8vw, 88px);
+}
+
+.hero-center img {
+  width: min(360px, 55vw);
+  height: min(460px, 68vh);
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 24px 46px rgba(88, 46, 14, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero-bottom {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: end;
+  gap: 18px;
+}
+
+.hero-info h1 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(3rem, 6.2vw, 4.8rem);
+  line-height: 0.92;
+  color: var(--maple-cream);
+}
+
+.hero-info .case {
+  margin: 10px 0 8px;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  color: #f0dfc4;
+}
+
+.hero-info p {
+  margin: 0;
+  max-width: 540px;
+  color: #8a684f;
+  font-size: 0.93rem;
+}
+
+.hero-dots {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.hero-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.hero-price {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 4.2rem);
+  line-height: 0.9;
+  color: rgba(247, 227, 199, 0.95);
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+.hero-note {
+  position: relative;
+  z-index: 2;
+  margin: 10px 0 0;
+  text-align: right;
+  color: #8b6a4f;
+  font-size: 0.78rem;
+}
+
+.section-card {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 18px auto;
+  padding: 24px;
+  background: rgba(247, 227, 199, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 22px;
+  box-shadow: 0 14px 30px rgba(80, 41, 13, 0.12);
+}
+
+.section-label {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  color: var(--maple-muted);
+}
+
+.section-head h2,
+.about-maple h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  color: #3d291d;
+}
+
+.about-maple {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+}
+
+.about-maple p {
+  color: #6b4c39;
+}
+
+.about-stat-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.about-stat-grid article {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.about-stat-grid h3 {
+  margin: 0;
+  color: #9c4f1e;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  font-size: 2.2rem;
+}
+
+.about-stat-grid p {
+  margin: 2px 0 0;
+}
+
+.feature-strip {
+  padding: 0;
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.feature,
+.teach-points article,
+.faq-list details {
+  background: rgba(255, 255, 255, 0.56);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 15px;
+}
+
+.feature h3,
+.teach-points h3 {
+  margin: 0 0 5px;
+  color: #3b281c;
+}
+
+.feature p,
+.teach-points p,
+.faq-list p {
+  margin: 0;
+  color: #6e503d;
+}
+
+.teach-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #3d291d;
+}
+
+.faq-list p {
+  margin-top: 8px;
+}
+
+.maple-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 26px;
+  background: #2c1a12;
+  color: #f2dcc0;
+  padding: 24px 14px;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.footer-inner h3 {
+  margin: 0 0 6px;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 1.5rem;
+}
+
+.footer-inner p {
+  margin: 3px 0;
+  color: #e5c9a8;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1000px) {
+  .hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-note,
+  .hero-price {
+    text-align: left;
+  }
+
+  .about-maple,
+  .feature-strip,
+  .teach-points,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-center img {
+    width: min(320px, 70vw);
+    height: 380px;
+  }
+}
