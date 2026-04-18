@@ -89,7 +89,27 @@
 }
 
 @media (max-width: 860px) {
-  .nav-shell { padding: 10px 12px; }
-  .nav-links { gap: 3px; }
+  .nav-shell {
+    padding: 10px 12px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    gap: 3px;
+    width: 100%;
+    justify-content: flex-start;
+  }
   .nav-link { font-size: 0.78rem; padding: 6px 10px; }
+}
+
+@media (max-width: 520px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-link {
+    text-align: center;
+  }
 }

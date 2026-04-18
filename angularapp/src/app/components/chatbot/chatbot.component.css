@@ -228,3 +228,20 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+@media (max-width: 640px) {
+  .chatbot-wrapper {
+    right: 14px;
+    bottom: 16px;
+  }
+
+  .chatbot-window {
+    width: min(92vw, 360px);
+    right: 0;
+    bottom: 64px;
+  }
+
+  .chatbot-body {
+    height: 260px;
+  }
+}

@@ -29,7 +29,6 @@
   --maple-font-body: 'Manrope', 'Segoe UI', Roboto, Arial, sans-serif;
   --maple-green: #cfd6e5;
   --maple-red: #dfe4ef;
-}
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -537,6 +536,30 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   margin-top: 26px;
 }
 
+@media (min-width: 1400px) {
+  .admin-page-wrapper {
+    max-width: 1480px;
+    padding: 52px 0 72px;
+  }
+
+  .page-header {
+    margin-bottom: 34px;
+  }
+
+  .dashboard-card {
+    padding: 34px;
+  }
+
+  .table-tools {
+    margin-bottom: 22px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 16px 18px;
+  }
+}
+
 /* =====================================================
    FORM CARD
    ===================================================== */
@@ -648,4 +671,62 @@ footer { margin-top: 0; }
   .footer-inner { grid-template-columns: 1fr; }
   .dashboard-card { padding: 20px; }
   .search-box { width: 100%; }
+  .form-actions,
+  .button-group,
+  .action-buttons {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .form-actions .btn-maple,
+  .button-group .btn-maple,
+  .action-buttons .btn-maple,
+  .action-buttons .btn-edit,
+  .action-buttons .btn-delete,
+  .action-buttons .btn-approve,
+  .action-buttons .btn-reject {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .admin-table {
+    font-size: 0.84rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 11px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-page-wrapper {
+    width: 96%;
+    padding: 20px 0 30px;
+  }
+
+  .page-header {
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-size: clamp(1.45rem, 6.4vw, 1.9rem);
+  }
+
+  .dashboard-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .table-tools {
+    margin-bottom: 14px;
+  }
+
+  .search-box,
+  .search-input {
+    font-size: 0.86rem;
+    padding: 10px 14px;
+  }
+}
 }
