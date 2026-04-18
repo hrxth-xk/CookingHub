@@ -1,14 +1,25 @@
 <nav class="maple-navbar">
   <div class="nav-shell">
-    <a class="brand" routerLink="/home" aria-label="Maple Home">
-      <span>MAPLE</span>
-      <small>STUDIO</small>
-    </a>
+    <div class="nav-top">
+      <a class="brand" routerLink="/home" aria-label="Maple Home" (click)="closeMobileMenu()">
+        <span>MAPLE</span>
+        <small>STUDIO</small>
+      </a>
 
-    <div class="nav-links">
-      <a [routerLink]="['/home']" fragment="faq" class="nav-link">Home</a>
-      <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
-      <a routerLink="/register" routerLinkActive="active" class="nav-link cta-link">Sign Up</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-label="Toggle navigation menu">
+        =
+      </button>
+    </div>
+
+    <div class="nav-links" [class.open]="mobileMenuOpen">
+      <a [routerLink]="['/home']" fragment="faq" class="nav-link" (click)="closeMobileMenu()">Home</a>
+      <a routerLink="/login" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Login</a>
+      <a routerLink="/register" routerLinkActive="active" class="nav-link cta-link" (click)="closeMobileMenu()">Sign Up</a>
     </div>
   </div>
 </nav>
