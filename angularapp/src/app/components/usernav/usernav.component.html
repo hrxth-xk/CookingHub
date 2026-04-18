@@ -1,17 +1,28 @@
 <nav class="maple-navbar">
   <div class="nav-shell">
-    <a class="brand" routerLink="/home" aria-label="Maple Home">
-      <span>MAPLE</span>
-      <small>STUDIO</small>
-    </a>
+    <div class="nav-top">
+      <a class="brand" routerLink="/home" aria-label="Maple Home" (click)="closeMobileMenu()">
+        <span>MAPLE</span>
+        <small>STUDIO</small>
+      </a>
 
-    <div class="nav-links">
-      <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
-      <a routerLink="/user/cooking-imp" routerLinkActive="active" class="nav-link">Why Cook</a>
-      <a routerLink="/user/view-classes" routerLinkActive="active" class="nav-link">Classes</a>
-      <a routerLink="/user/my-requests" routerLinkActive="active" class="nav-link">My Requests</a>
-      <a routerLink="/user/add-feedback" routerLinkActive="active" class="nav-link">Post Feedback</a>
-      <a routerLink="/user/my-feedbacks" routerLinkActive="active" class="nav-link">My Feedbacks</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-label="Toggle navigation menu">
+        =
+      </button>
+    </div>
+
+    <div class="nav-links" [class.open]="mobileMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Home</a>
+      <a routerLink="/user/cooking-imp" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Why Cook</a>
+      <a routerLink="/user/view-classes" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Classes</a>
+      <a routerLink="/user/my-requests" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">My Requests</a>
+      <a routerLink="/user/add-feedback" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Post Feedback</a>
+      <a routerLink="/user/my-feedbacks" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">My Feedbacks</a>
 
       <span class="nav-welcome" *ngIf="user">{{ user.username }}</span>
       <button class="nav-link cta-link" (click)="logout()">Logout</button>

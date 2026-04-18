@@ -1,16 +1,27 @@
 <nav class="maple-navbar">
   <div class="nav-shell">
-    <a class="brand" routerLink="/home" aria-label="Maple Home">
-      <span>MAPLE</span>
-      <small>ADMIN</small>
-    </a>
+    <div class="nav-top">
+      <a class="brand" routerLink="/home" aria-label="Maple Home" (click)="closeMobileMenu()">
+        <span>MAPLE</span>
+        <small>ADMIN</small>
+      </a>
 
-    <div class="nav-links">
-      <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
-      <a routerLink="/admin/add-class" routerLinkActive="active" class="nav-link">Add Class</a>
-      <a routerLink="/admin/view-class" routerLinkActive="active" class="nav-link">Manage Classes</a>
-      <a routerLink="/admin/view-requests" routerLinkActive="active" class="nav-link">Requests</a>
-      <a routerLink="/admin/view-feedbacks" routerLinkActive="active" class="nav-link">Feedbacks</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-label="Toggle navigation menu">
+        =
+      </button>
+    </div>
+
+    <div class="nav-links" [class.open]="mobileMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Home</a>
+      <a routerLink="/admin/add-class" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Add Class</a>
+      <a routerLink="/admin/view-class" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Manage Classes</a>
+      <a routerLink="/admin/view-requests" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Requests</a>
+      <a routerLink="/admin/view-feedbacks" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">Feedbacks</a>
 
       <span class="nav-welcome" *ngIf="user">{{ user.username }}</span>
       <button class="nav-link cta-link" (click)="logout()">Logout</button>
