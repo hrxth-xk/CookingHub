@@ -1,94 +1,95 @@
 .maple-navbar {
-    background: var(--maple-bg, #ebc38f);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-        min-height: 72px;
-          position: sticky;
-            top: 0;
-              z-index: 100;
-              }
+  background: linear-gradient(180deg, rgba(22, 24, 30, 0.96), rgba(15, 17, 22, 0.95));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  min-height: 74px;
+  position: sticky;
+  top: 0;
+  z-index: 110;
+}
 
-              .nav-shell {
-                max-width: 1240px;
-                  margin: 0 auto;
-                    padding: 12px 20px;
-                      display: flex;
-                        align-items: center;
-                          justify-content: space-between;
-                            gap: 18px;
-                            }
+.nav-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
 
-                            .brand {
-                              color: var(--maple-accent, #3f1d91);
-                                text-decoration: none;
-                                  display: flex;
-                                    flex-direction: column;
-                                      line-height: 0.85;
-                                        letter-spacing: 0.02em;
-                                        }
+.brand {
+  color: var(--maple-accent, #1f365c);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+}
 
-                                        .brand span {
-                                          font-family: var(--maple-font-heading, 'Outfit', sans-serif);
-                                            font-size: 1.85rem;
-                                              font-weight: 700;
-                                              }
+.brand span {
+  font-family: var(--maple-font-heading, 'Outfit', sans-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+}
 
-                                              .brand small {
-                                                font-family: var(--maple-font-heading, 'Outfit', sans-serif);
-                                                  font-size: 0.6rem;
-                                                    letter-spacing: 0.2em;
-                                                      font-weight: 700;
-                                                      }
+.brand small {
+  font-family: var(--maple-font-heading, 'Outfit', sans-serif);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
 
-                                                      .nav-links {
-                                                        display: flex;
-                                                          align-items: center;
-                                                            gap: 4px;
-                                                              flex-wrap: wrap;
-                                                                justify-content: flex-end;
-                                                                }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
-                                                                .nav-link {
-                                                                  color: #4f2f20;
-                                                                    text-decoration: none;
-                                                                      font-size: 0.86rem;
-                                                                        font-weight: 600;
-                                                                          border-radius: 999px;
-                                                                            padding: 7px 14px;
-                                                                              background: none;
-                                                                                border: none;
-                                                                                  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-                                                                                  }
+.nav-link {
+  color: var(--maple-ink-light, #24314f);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: none;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
 
-                                                                                  .nav-link:hover,
-                                                                                  .nav-link.active {
-                                                                                    background: rgba(63, 29, 145, 0.14);
-                                                                                      color: var(--maple-accent, #3f1d91);
-                                                                                        box-shadow: inset 0 0 0 1px rgba(63, 29, 145, 0.22);
-                                                                                          transform: translateY(-1px);
-                                                                                          }
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--maple-accent, #1f365c);
+  border-color: rgba(255, 255, 255, 0.26);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
 
-                                                                                          .cta-link {
-                                                                                            background: var(--maple-accent, #3f1d91);
-                                                                                              color: #fff !important;
-                                                                                                box-shadow: 0 8px 16px rgba(63, 29, 145, 0.25);
-                                                                                                  cursor: pointer;
-                                                                                                  }
+.cta-link {
+  background: linear-gradient(180deg, #ffffff, #e5e9f1);
+  color: #101318 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
 
-                                                                                                  .cta-link:hover {
-                                                                                                    background: var(--maple-accent-hover, #2f1572) !important;
-                                                                                                      color: #fff !important;
-                                                                                                      }
+.cta-link:hover {
+  background: linear-gradient(180deg, #ffffff, #d6dce7) !important;
+  color: #101318 !important;
+}
 
-                                                                                                      .nav-welcome {
-                                                                                                        font-size: 0.84rem;
-                                                                                                          font-weight: 600;
-                                                                                                            color: var(--maple-muted, #765542);
-                                                                                                              padding: 0 8px;
-                                                                                                              }
+.nav-welcome {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--maple-muted, #60708f);
+  padding: 0 8px;
+}
 
-                                                                                                              @media (max-width: 860px) {
-                                                                                                                .nav-shell { padding: 10px 12px; }
-                                                                                                                  .nav-links { gap: 3px; }
-                                                                                                                    .nav-link { font-size: 0.78rem; padding: 6px 10px; }
-                                                                                                                    
+@media (max-width: 860px) {
+  .nav-shell { padding: 10px 12px; }
+  .nav-links { gap: 3px; }
+  .nav-link { font-size: 0.78rem; padding: 6px 10px; }
 }

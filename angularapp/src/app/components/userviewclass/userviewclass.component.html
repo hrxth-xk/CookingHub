@@ -24,11 +24,11 @@
       </div>
 
       <div class="class-card-details">
-        <div class="detail-row"><span class="detail-label">🍽️ Cuisine</span><span>{{ c.CuisineType }}</span></div>
-        <div class="detail-row"><span class="detail-label">👨‍🍳 Chef</span><span>{{ c.ChefName }}</span></div>
-        <div class="detail-row"><span class="detail-label">📍 Location</span><span>{{ c.Location }}</span></div>
-        <div class="detail-row"><span class="detail-label">⏱️ Duration</span><span>{{ c.DurationInHours }} hrs</span></div>
-        <div class="detail-row"><span class="detail-label">💰 Fee</span><span class="fee-value">{{ c.Fee | currency }}</span></div>
+        <div class="detail-row"><span class="detail-label">Cuisine</span><span>{{ c.CuisineType }}</span></div>
+        <div class="detail-row"><span class="detail-label">Chef</span><span>{{ c.ChefName }}</span></div>
+        <div class="detail-row"><span class="detail-label">Location</span><span>{{ c.Location }}</span></div>
+        <div class="detail-row"><span class="detail-label">Duration</span><span>{{ c.DurationInHours }} hrs</span></div>
+        <div class="detail-row"><span class="detail-label">Fee</span><span class="fee-value">{{ c.Fee | currency }}</span></div>
       </div>
 
       <button class="btn-maple btn-maple-solid class-apply-btn" (click)="apply(c.CookingClassId)">

@@ -1,177 +1,163 @@
 .maple-home {
-  --maple-bg: #ebc38f;
-  --maple-bg-soft: #f2d2a5;
-  --maple-cream: #f7e3c7;
-  --maple-ink: #2f1d12;
-  --maple-muted: #765542;
-  --maple-accent: #3f1d91;
-  background: linear-gradient(180deg, #ebc38f 0%, #efcb98 35%, #f4d9b2 100%);
-  color: var(--maple-ink);
   position: relative;
-  overflow: hidden;
+  isolation: isolate;
+  color: var(--maple-ink);
+  padding-bottom: 28px;
+  background:
+    radial-gradient(1000px 380px at 12% -10%, rgba(255, 255, 255, 0.07), transparent 70%),
+    radial-gradient(900px 320px at 88% 0%, rgba(255, 255, 255, 0.05), transparent 68%);
 }
 
 .grain-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-  background-size: 18px 18px;
-  opacity: 0.22;
+  z-index: -1;
   pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.24;
 }
 
 .hero-stage {
-  position: relative;
-  min-height: calc(100vh - 72px);
-  padding: clamp(48px, 7vh, 90px) clamp(16px, 4vw, 44px) clamp(30px, 5vh, 56px);
+  width: min(1220px, 94vw);
+  margin: 0 auto;
+  min-height: calc(100vh - 74px);
+  padding: clamp(34px, 6vh, 72px) 0 clamp(34px, 6vh, 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  isolation: isolate;
 }
 
 .wordmark {
-  position: absolute;
-  inset: clamp(66px, 10vh, 118px) 0 auto;
   text-align: center;
   font-family: 'Montserrat', 'Arial Black', sans-serif;
-  letter-spacing: 0.015em;
-  font-size: clamp(6.6rem, 23.5vw, 17.2rem);
+  font-size: clamp(4.2rem, 16vw, 12rem);
   font-weight: 900;
-  line-height: 0.84;
+  letter-spacing: 0.08em;
+  line-height: 0.78;
+  color: rgba(255, 255, 255, 0.16);
   text-transform: uppercase;
-  color: #f8ead2;
-  text-shadow: 0 12px 22px rgba(76, 38, 14, 0.16);
-  opacity: 0.98;
-  z-index: 2;
-  pointer-events: none;
   user-select: none;
+  pointer-events: none;
+  margin: 0;
 }
 
 .wordmark::after {
-  content: 'STUDIO';
+  content: 'ADMIN';
   display: block;
-  margin-top: clamp(4px, 0.9vw, 12px);
-  font-size: clamp(0.72rem, 1.35vw, 1.22rem);
-  font-weight: 800;
-  letter-spacing: 0.34em;
-  line-height: 1;
+  margin-top: 12px;
+  font-size: clamp(0.76rem, 1.7vw, 1rem);
+  letter-spacing: 0.54em;
+  color: rgba(255, 255, 255, 0.34);
 }
 
 .hero-bottom {
-  position: relative;
-  z-index: 3;
+  margin-top: clamp(20px, 4vh, 44px);
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
   align-items: end;
-  gap: clamp(16px, 2vw, 24px);
-  width: min(1140px, 100%);
-  margin: clamp(300px, 40vh, 440px) auto 0;
-  padding: clamp(20px, 3vw, 28px) clamp(18px, 3vw, 28px);
-  border-radius: 22px;
-  background: linear-gradient(140deg, rgba(255, 247, 233, 0.3), rgba(255, 238, 209, 0.16));
-  border: 1px solid rgba(255, 246, 224, 0.45);
-  box-shadow: 0 14px 28px rgba(88, 46, 14, 0.1);
-  backdrop-filter: blur(2px);
+  padding: clamp(20px, 2.8vw, 32px);
+  border-radius: 24px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(10px);
 }
 
 .hero-info h1 {
   margin: 0;
-  font-family: 'Outfit', 'Segoe UI', sans-serif;
-  font-size: clamp(3rem, 6.2vw, 4.8rem);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 0.92;
-  color: var(--maple-cream);
+  font-family: var(--maple-font-heading);
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 0.9;
+  letter-spacing: 0.015em;
+  color: #ffffff;
 }
 
 .hero-info .case {
-  margin: 10px 0 8px;
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  color: #f0dfc4;
+  margin: 12px 0 8px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #cfd5e0;
 }
 
 .hero-info p {
-  margin: 0;
-  max-width: 540px;
-  color: #795843;
-  font-size: 0.95rem;
+  max-width: 620px;
+  font-size: 1rem;
+  color: #c2cad8;
+}
+
+.hero-side {
+  display: grid;
+  gap: 14px;
+  justify-items: end;
 }
 
 .hero-dots {
   display: flex;
   gap: 10px;
-  padding-bottom: 10px;
 }
 
 .hero-dots span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255, 249, 236, 0.72);
-  box-shadow: 0 0 0 3px rgba(255, 250, 240, 0.14);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .hero-price {
-  font-family: 'Outfit', 'Segoe UI', sans-serif;
-  font-size: clamp(2.8rem, 7vw, 4.2rem);
-  line-height: 0.9;
-  color: rgba(248, 236, 216, 0.98);
-  letter-spacing: 0.01em;
+  font-family: var(--maple-font-heading);
+  font-size: clamp(2.2rem, 6vw, 4rem);
   font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
 }
 
 .hero-note {
-  position: relative;
-  z-index: 3;
-  width: min(1140px, 100%);
-  margin: 12px auto 0;
+  margin: 12px 4px 0;
   text-align: right;
-  color: #86654d;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
+  color: #9ca5b6;
 }
 
 .section-card {
-  position: relative;
-  z-index: 2;
-  max-width: 1180px;
-  margin: clamp(44px, 6vh, 88px) auto;
-  padding: 24px;
-  background: rgba(247, 227, 199, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.48);
+  width: min(1220px, 94vw);
+  margin: 18px auto;
+  padding: clamp(20px, 2.7vw, 32px);
   border-radius: 22px;
-  box-shadow: 0 14px 30px rgba(80, 41, 13, 0.12);
-}
-
-.hero-stage + .section-card {
-  margin-top: clamp(56px, 7vh, 104px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
 }
 
 .section-label {
   margin: 0 0 6px;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.74rem;
-  color: var(--maple-muted);
+  letter-spacing: 0.2em;
+  color: #9ca5b6;
 }
 
 .section-head h2,
 .about-maple h2 {
   margin: 0;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-family: 'Outfit', 'Segoe UI', sans-serif;
-  color: #3d291d;
+  font-family: var(--maple-font-heading);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  color: #ffffff;
 }
 
 .about-maple {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 24px;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 18px;
 }
 
-.about-maple p {
-  color: #6b4c39;
+.about-maple p,
+.feature p,
+.teach-points p,
+.faq-list p {
+  color: #b8c0cf;
 }
 
 .about-stat-grid {
@@ -179,179 +165,79 @@
   gap: 10px;
 }
 
-.about-stat-grid article {
-  background: rgba(255, 255, 255, 0.5);
+.about-stat-grid article,
+.feature,
+.teach-points article,
+.faq-list details {
+  padding: 16px;
   border-radius: 14px;
-  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .about-stat-grid h3 {
   margin: 0;
-  color: #9c4f1e;
-  font-family: 'Outfit', 'Segoe UI', sans-serif;
-  font-size: 2.2rem;
+  font-family: var(--maple-font-heading);
+  font-size: 2rem;
+  color: #ffffff;
 }
 
-.about-stat-grid p {
-  margin: 2px 0 0;
-}
-
-.feature-strip {
-  padding: 0;
+.feature-strip,
+.teach-points {
   margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-}
-
-.feature,
-.teach-points article,
-.faq-list details {
-  background: rgba(255, 255, 255, 0.56);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 15px;
 }
 
 .feature h3,
-.teach-points h3 {
-  margin: 0 0 5px;
-  color: #3b281c;
-}
-
-.feature p,
-.teach-points p,
-.faq-list p {
-  margin: 0;
-  color: #6e503d;
-}
-
-.teach-points {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 14px;
+.teach-points h3,
+.faq-list summary {
+  color: #ffffff;
 }
 
 .faq-list {
+  margin-top: 14px;
   display: grid;
   gap: 10px;
-  margin-top: 14px;
 }
 
 .faq-list summary {
   cursor: pointer;
   font-weight: 700;
-  color: #3d291d;
 }
 
-.faq-list p {
-  margin-top: 8px;
-}
-
-.maple-footer {
-  position: relative;
-  z-index: 2;
-  margin-top: 26px;
-  background: #2c1a12;
-  color: #f2dcc0;
-  padding: 24px 14px;
-}
-
-.footer-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.footer-inner h3 {
-  margin: 0 0 6px;
-  font-family: 'Outfit', 'Segoe UI', sans-serif;
-  letter-spacing: 0.04em;
-  font-size: 1.5rem;
-}
-
-.footer-inner p {
-  margin: 3px 0;
-  color: #e5c9a8;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 1000px) {
-  .wordmark {
-    font-size: clamp(4.6rem, 25vw, 8.5rem);
-    inset: clamp(82px, 12vh, 122px) 0 auto;
-    letter-spacing: 0.022em;
-  }
-
+@media (max-width: 960px) {
   .hero-bottom {
     grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: clamp(186px, 30vh, 268px);
-    border-radius: 18px;
   }
 
-  .hero-note,
-  .hero-price {
+  .hero-side {
+    justify-items: start;
+  }
+
+  .hero-note {
     text-align: left;
   }
 
   .about-maple,
   .feature-strip,
-  .teach-points,
-  .footer-inner {
+  .teach-points {
     grid-template-columns: 1fr;
-  }
-
-  .hero-note {
-    margin-top: 10px;
-  }
-
-  .section-card {
-    margin: clamp(34px, 5vh, 62px) auto;
-  }
-
-  .hero-stage + .section-card {
-    margin-top: clamp(42px, 6vh, 72px);
   }
 }
 
 @media (max-width: 640px) {
   .hero-stage {
-    padding-top: clamp(30px, 5vh, 50px);
+    min-height: auto;
+    padding-top: 24px;
   }
 
   .wordmark {
-    font-size: clamp(3.5rem, 24vw, 6rem);
-    line-height: 0.86;
-    inset: clamp(90px, 13vh, 122px) 0 auto;
+    font-size: clamp(3rem, 19vw, 5rem);
   }
 
   .wordmark::after {
-    letter-spacing: 0.26em;
-    margin-top: 3px;
-  }
-
-  .hero-bottom {
-    margin-top: clamp(154px, 25vh, 216px);
-    padding: 16px;
-  }
-
-  .hero-info h1 {
-    font-size: clamp(2.2rem, 11vw, 3rem);
-  }
-
-  .hero-info p {
-    font-size: 0.9rem;
-  }
-
-  .section-card {
-    margin: clamp(24px, 4.2vh, 44px) auto;
-  }
-
-  .hero-stage + .section-card {
-    margin-top: clamp(30px, 5vh, 52px);
+    letter-spacing: 0.3em;
   }
 }

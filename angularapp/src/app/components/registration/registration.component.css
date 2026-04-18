@@ -1,6 +1,6 @@
 .maple-register-page {
 	min-height: calc(100vh - 72px);
-	background: linear-gradient(180deg, #ebc38f 0%, #efcb98 45%, #f4d9b2 100%);
+	background: linear-gradient(180deg, #12141a 0%, #0f1116 50%, #0d0f14 100%);
 	position: relative;
 	overflow: hidden;
 	padding: 38px 18px 0;
@@ -16,7 +16,7 @@
 
 .register-head {
 	text-align: center;
-	color: #2f1e12;
+	color: var(--maple-ink);
 	margin-bottom: 14px;
 }
 
@@ -30,7 +30,7 @@
 .register-head p {
 	max-width: 680px;
 	margin: 0 auto;
-	color: #694835;
+	color: var(--maple-muted);
 }
 
 .eyebrow {
@@ -38,15 +38,15 @@
 	text-transform: uppercase;
 	letter-spacing: 0.14em;
 	font-size: 0.76rem;
-	color: #7f5b45;
+	color: var(--maple-muted);
 }
 
 .register-card {
 	border-radius: 22px;
 	padding: 30px;
-	background: rgba(247, 227, 199, 0.85);
-	border: 1px solid rgba(255, 255, 255, 0.52);
-	box-shadow: 0 18px 42px rgba(87, 46, 15, 0.2);
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
 }
 
 .field-grid {
@@ -66,20 +66,23 @@
 
 .field-block label {
 	font-weight: 600;
-	color: #5f3f2d;
+	color: #cdd4e2;
 	margin-bottom: 6px;
 }
 
 .form-control {
 	border-radius: 12px;
-	border: 1px solid #d8ba97;
-	background: rgba(255, 252, 248, 0.75);
+	border: 1px solid var(--maple-input-border);
+	background: var(--maple-input-bg);
+	color: var(--maple-ink);
 	padding: 10px 12px;
 }
 
 .form-control:focus {
-	border-color: #6f4bbf;
-	box-shadow: 0 0 0 0.18rem rgba(111, 75, 191, 0.16);
+	border-color: var(--maple-accent);
+	box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
+	background: var(--maple-input-bg);
+	color: var(--maple-ink);
 }
 
 .text-danger {
@@ -114,45 +117,15 @@
 }
 
 .btn-maple-solid {
-	background: #3f1d91;
+	background: var(--maple-accent);
 	color: #fff;
-	box-shadow: 0 10px 22px rgba(63, 29, 145, 0.3);
+	box-shadow: 0 10px 22px rgba(31, 54, 92, 0.3);
 }
 
 .btn-maple-light {
-	background: rgba(255, 255, 255, 0.64);
-	color: #3f1d91;
-	border: 1px solid rgba(63, 29, 145, 0.25);
-}
-
-.maple-footer {
-	position: relative;
-	z-index: 2;
-	margin-top: 26px;
-	background: #2c1a12;
-	color: #f2dcc0;
-	padding: 24px 14px;
-}
-
-.footer-inner {
-	max-width: 1180px;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 14px;
-}
-
-.footer-inner h3 {
-	margin: 0 0 6px;
-	font-family: 'Outfit', 'Segoe UI', sans-serif;
-	letter-spacing: 0.04em;
-	font-size: 1.5rem;
-}
-
-.footer-inner p {
-	margin: 3px 0;
-	color: #e5c9a8;
-	font-size: 0.9rem;
+	background: rgba(255, 255, 255, 0.06);
+	color: var(--maple-accent);
+	border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 @media (max-width: 800px) {
@@ -168,7 +141,4 @@
 		padding: 24px;
 	}
 
-	.footer-inner {
-		grid-template-columns: 1fr;
-	}
 }

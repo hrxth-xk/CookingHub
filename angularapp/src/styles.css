@@ -4,31 +4,31 @@
    MAPLE DESIGN SYSTEM — Global Tokens
    ===================================================== */
 :root {
-  --maple-bg: #ebc38f;
-  --maple-bg-soft: #f2d2a5;
-  --maple-cream: #f7e3c7;
-  --maple-ink: #2f1d12;
-  --maple-ink-light: #3d291d;
-  --maple-muted: #765542;
-  --maple-muted-light: #8a684f;
-  --maple-accent: #3f1d91;
-  --maple-accent-hover: #2f1572;
-  --maple-card-bg: rgba(255, 255, 255, 0.82);
-  --maple-card-border: rgba(210, 190, 165, 0.35);
-  --maple-input-bg: rgba(255, 252, 248, 0.75);
-  --maple-input-border: #d8ba97;
-  --maple-footer-bg: #2c1a12;
-  --maple-footer-text: #f2dcc0;
+  --maple-bg: #0f1013;
+  --maple-bg-soft: #15171d;
+  --maple-cream: #ffffff;
+  --maple-ink: #f5f6f8;
+  --maple-ink-light: #e5e7ec;
+  --maple-muted: #a7aebc;
+  --maple-muted-light: #8b93a3;
+  --maple-accent: #ffffff;
+  --maple-accent-hover: #d9dde6;
+  --maple-card-bg: rgba(255, 255, 255, 0.04);
+  --maple-card-border: rgba(255, 255, 255, 0.14);
+  --maple-input-bg: rgba(255, 255, 255, 0.03);
+  --maple-input-border: rgba(255, 255, 255, 0.2);
+  --maple-footer-bg: #08090c;
+  --maple-footer-text: #c8cedb;
   --maple-radius-card: 22px;
   --maple-radius-pill: 999px;
   --maple-radius-input: 12px;
-  --maple-shadow-card: 0 8px 28px rgba(84, 44, 16, 0.12);
-  --maple-shadow-btn: 0 10px 22px rgba(63, 29, 145, 0.28);
+  --maple-shadow-card: 0 20px 45px rgba(0, 0, 0, 0.35);
+  --maple-shadow-btn: 0 12px 24px rgba(0, 0, 0, 0.3);
   --maple-font-display: 'Cormorant Garamond', 'Times New Roman', serif;
   --maple-font-heading: 'Outfit', 'Segoe UI', sans-serif;
   --maple-font-body: 'Manrope', 'Segoe UI', Roboto, Arial, sans-serif;
-  --maple-green: #2a7d4f;
-  --maple-red: #b3261e;
+  --maple-green: #cfd6e5;
+  --maple-red: #dfe4ef;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -36,7 +36,10 @@
 body {
   margin: 0;
   font-family: var(--maple-font-body);
-  background: linear-gradient(180deg, #f0d4a8 0%, #f5debb 40%, #f9ebd4 100%);
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(255, 255, 255, 0.08), transparent 70%),
+    radial-gradient(1000px 450px at -10% 10%, rgba(255, 255, 255, 0.05), transparent 65%),
+    linear-gradient(180deg, #13151a 0%, #101217 42%, #0d0f14 100%);
   color: var(--maple-ink);
   line-height: 1.55;
   min-height: 100vh;
@@ -52,10 +55,14 @@ p { margin: 0; }
   width: 94%;
   max-width: 1360px;
   margin: 0 auto;
-  padding: 36px 0 48px;
+  padding: 38px 0 54px;
 }
 
 .page-header { margin-bottom: 28px; }
+
+.page-header.centered {
+  text-align: center;
+}
 
 .page-title {
   font-family: var(--maple-font-heading);
@@ -80,12 +87,13 @@ p { margin: 0; }
   padding: 28px;
   border: 1px solid var(--maple-card-border);
   box-shadow: var(--maple-shadow-card);
+  backdrop-filter: blur(8px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dashboard-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(84, 44, 16, 0.17);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* =====================================================
@@ -108,7 +116,7 @@ label {
   font-size: 0.82rem;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #5a3a29;
+  color: #cbd2e0;
 }
 
 input, textarea, select {
@@ -122,10 +130,52 @@ input, textarea, select {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Bootstrap control compatibility */
+.form-control,
+.form-select {
+  border-radius: var(--maple-radius-input);
+  border: 1px solid var(--maple-input-border);
+  font-family: var(--maple-font-body);
+  background: var(--maple-input-bg);
+  color: var(--maple-ink);
+}
+
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--maple-accent);
+  box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
+  background: var(--maple-input-bg);
+  color: var(--maple-ink);
+}
+
+input::placeholder,
+textarea::placeholder,
+.form-control::placeholder {
+  color: var(--maple-muted-light);
+  opacity: 1;
+}
+
+select option,
+.form-select option {
+  background: #11141b;
+  color: var(--maple-ink);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+.form-control:disabled,
+.form-select:disabled {
+  background: rgba(255, 255, 255, 0.02);
+  color: #8c95a7;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--maple-accent);
-  box-shadow: 0 0 0 0.18rem rgba(63, 29, 145, 0.16);
+  box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
 }
 
 textarea { resize: vertical; min-height: 80px; }
@@ -166,54 +216,56 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 .btn-maple:hover { transform: translateY(-1px); }
 
 .btn-maple-solid {
-  background: var(--maple-accent);
-  color: #fff;
+  background: linear-gradient(180deg, #ffffff, #e9ecf2);
+  color: #111318;
   box-shadow: var(--maple-shadow-btn);
 }
 
 .btn-maple-solid:hover {
-  background: var(--maple-accent-hover);
+  background: linear-gradient(180deg, #ffffff, #d9dde6);
 }
 
 .btn-maple-solid:disabled {
-  background: #a89bb5;
+  background: #a6adba;
+  color: #1c1f26;
   box-shadow: none;
   cursor: not-allowed;
   transform: none;
 }
 
 .btn-maple-light {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(63, 29, 145, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: var(--maple-accent);
 }
 
 .btn-maple-light:hover {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .btn-maple-danger {
-  background: var(--maple-red);
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(179, 38, 30, 0.22);
+  background: linear-gradient(180deg, #f2f4f8, #dde2eb);
+  color: #101218;
+  box-shadow: var(--maple-shadow-btn);
 }
 
-.btn-maple-danger:hover { background: #8c1d18; }
+.btn-maple-danger:hover { background: linear-gradient(180deg, #ffffff, #d2d8e4); }
 
 .btn-maple-danger:disabled {
-  background: #c4a69e;
+  background: #a6adba;
+  color: #1c1f26;
   box-shadow: none;
   cursor: not-allowed;
   transform: none;
 }
 
 .btn-maple-green {
-  background: var(--maple-green);
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(42, 125, 79, 0.22);
+  background: linear-gradient(180deg, #ffffff, #e7ebf3);
+  color: #111318;
+  box-shadow: var(--maple-shadow-btn);
 }
 
-.btn-maple-green:hover { background: #1f6340; }
+.btn-maple-green:hover { background: linear-gradient(180deg, #ffffff, #d9dde6); }
 
 .btn-maple-outline {
   background: transparent;
@@ -222,15 +274,15 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 }
 
 .btn-maple-outline:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--maple-accent);
   color: var(--maple-accent);
 }
 
 /* Legacy button mappings */
 .btn-primary {
-  background: var(--maple-accent);
-  color: white;
+  background: linear-gradient(180deg, #ffffff, #e9ecf2);
+  color: #101218;
   border: none;
   padding: 10px 22px;
   border-radius: var(--maple-radius-pill);
@@ -238,10 +290,10 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   box-shadow: var(--maple-shadow-btn);
 }
 
-.btn-primary:hover { background: var(--maple-accent-hover); transform: translateY(-1px); }
+.btn-primary:hover { background: linear-gradient(180deg, #ffffff, #d9dde6); transform: translateY(-1px); }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--maple-muted);
   border: 1px solid var(--maple-input-border);
   padding: 10px 22px;
@@ -249,11 +301,11 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   font-weight: 600;
 }
 
-.btn-secondary:hover { background: rgba(255, 255, 255, 0.85); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.16); }
 
 .btn-edit {
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(63, 29, 145, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: var(--maple-accent);
   padding: 7px 16px;
   border-radius: var(--maple-radius-pill);
@@ -261,11 +313,11 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   font-size: 0.82rem;
 }
 
-.btn-edit:hover { background: rgba(255, 255, 255, 0.85); transform: translateY(-1px); }
+.btn-edit:hover { background: rgba(255, 255, 255, 0.16); transform: translateY(-1px); }
 
 .btn-delete {
-  background: var(--maple-red);
-  color: white;
+  background: linear-gradient(180deg, #f2f4f8, #dde2eb);
+  color: #101218;
   border: none;
   padding: 7px 16px;
   border-radius: var(--maple-radius-pill);
@@ -273,11 +325,11 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   font-size: 0.82rem;
 }
 
-.btn-delete:hover { background: #8c1d18; transform: translateY(-1px); }
+.btn-delete:hover { background: linear-gradient(180deg, #ffffff, #d2d8e4); transform: translateY(-1px); }
 
 .btn-approve {
-  background: var(--maple-green);
-  color: white;
+  background: linear-gradient(180deg, #ffffff, #e7ebf3);
+  color: #101218;
   border: none;
   padding: 7px 16px;
   border-radius: var(--maple-radius-pill);
@@ -285,11 +337,11 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   font-size: 0.82rem;
 }
 
-.btn-approve:hover { background: #1f6340; transform: translateY(-1px); }
+.btn-approve:hover { background: linear-gradient(180deg, #ffffff, #d9dde6); transform: translateY(-1px); }
 
 .btn-reject {
-  background: var(--maple-red);
-  color: white;
+  background: linear-gradient(180deg, #f2f4f8, #dde2eb);
+  color: #101218;
   border: none;
   padding: 7px 16px;
   border-radius: var(--maple-radius-pill);
@@ -297,7 +349,7 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   font-size: 0.82rem;
 }
 
-.btn-reject:hover { background: #8c1d18; transform: translateY(-1px); }
+.btn-reject:hover { background: linear-gradient(180deg, #ffffff, #d2d8e4); transform: translateY(-1px); }
 
 /* =====================================================
    TABLE — Maple Warm Table
@@ -312,7 +364,7 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 }
 
 .admin-table thead {
-  background: rgba(245, 238, 228, 0.85);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .admin-table th {
@@ -323,12 +375,12 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--maple-muted);
-  border-bottom: 2px solid rgba(118, 85, 66, 0.18);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .admin-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(118, 85, 66, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--maple-ink-light);
 }
 
@@ -337,11 +389,11 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 }
 
 .admin-table tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .admin-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .action-buttons {
@@ -369,7 +421,7 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 .search-box:focus {
   outline: none;
   border-color: var(--maple-accent);
-  box-shadow: 0 0 0 0.18rem rgba(63, 29, 145, 0.16);
+  box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
 }
 
 .search-input {
@@ -386,7 +438,7 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 .search-input:focus {
   outline: none;
   border-color: var(--maple-accent);
-  box-shadow: 0 0 0 0.18rem rgba(63, 29, 145, 0.16);
+  box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
 }
 
 /* =====================================================
@@ -399,18 +451,18 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 }
 
 .feedback-card {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.05);
   padding: 22px;
   border-radius: 18px;
   border: 1px solid var(--maple-card-border);
   border-left: 4px solid var(--maple-accent);
-  box-shadow: 0 8px 22px rgba(84, 44, 16, 0.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feedback-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(84, 44, 16, 0.16);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
 }
 
 .feedback-header {
@@ -426,7 +478,7 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 .feedback-body {
   font-size: 0.92rem;
   line-height: 1.6;
-  color: #5a3a29;
+  color: var(--maple-ink-light);
 }
 
 /* =====================================================
@@ -448,6 +500,35 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
   display: flex;
   justify-content: flex-end;
   gap: 12px;
+}
+
+.form-actions.centered {
+  justify-content: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: var(--maple-radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f0f2f6;
+}
+
+.status-approved {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.status-rejected {
+  background: rgba(255, 255, 255, 0.08);
+  color: #c9cfdb;
 }
 
 .button-group {
@@ -481,10 +562,11 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 .maple-footer {
   position: relative;
   z-index: 2;
-  margin-top: 26px;
+  margin-top: 0;
   background: var(--maple-footer-bg);
   color: var(--maple-footer-text);
-  padding: 28px 18px;
+  padding: 30px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .footer-inner {
@@ -504,7 +586,7 @@ button { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease,
 
 .footer-inner p {
   margin: 3px 0;
-  color: #e5c9a8;
+  color: #a9b1c1;
   font-size: 0.88rem;
 }
 
@@ -524,12 +606,36 @@ footer { margin-top: 0; }
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.15s ease-in-out;
+  background: linear-gradient(180deg, rgba(23, 26, 34, 0.98), rgba(15, 17, 23, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 8px;
 }
 
 .navbar .dropdown-menu:hover {
   display: block;
   visibility: visible;
   opacity: 1;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  border-radius: 8px;
+  color: var(--maple-ink-light);
+  padding: 8px 12px;
+  font-size: 0.88rem;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus,
+.navbar .dropdown-menu .dropdown-item.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.navbar .dropdown-menu .dropdown-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* =====================================================
