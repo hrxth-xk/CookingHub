@@ -3,10 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Feedback } from '../models/feedback.model';
 import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environments.prod';
  
 @Injectable({ providedIn: 'root' })
 export class FeedbackService {
-  public apiUrl = '';
+  public apiUrl = environment.apiUrl; // This will be set from environment.ts
  
   constructor(private http: HttpClient, private auth: AuthService) {}
  

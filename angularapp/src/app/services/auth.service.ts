@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environments.prod';
  
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  public apiUrl = '';
+  public apiUrl = environment.apiUrl; // This will be set from environment.ts
   private authApiUrl = `${this.apiUrl}/api/authentication`;
 
  
