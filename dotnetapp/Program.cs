@@ -141,11 +141,9 @@ var app = builder.Build();
 // ============================================================
 // 9. MIDDLEWARE PIPELINE (ORDER MATTERS!)
 // ============================================================
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 // Remove or comment out HTTPS redirection for HTTP testing
 // app.UseHttpsRedirection();
