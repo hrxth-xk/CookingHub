@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CookingClass } from '../models/cooking-class.model';
 import { CookingClassRequest } from '../models/cooking-class-request.model';
 import { AuthService } from './auth.service';
-import { environment } from 'src/environments/environments.prod';
+import { environment } from '../../environments/environment';
  
 @Injectable({ providedIn: 'root' })
 export class CookingClassService {

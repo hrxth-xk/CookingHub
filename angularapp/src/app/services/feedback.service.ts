@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Feedback } from '../models/feedback.model';
 import { AuthService } from './auth.service';
-import { environment } from 'src/environments/environments.prod';
+import { environment } from '../../environments/environment';
  
 @Injectable({ providedIn: 'root' })
 export class FeedbackService {

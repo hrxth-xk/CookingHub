@@ -47,8 +47,8 @@ namespace dotnetapp.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User model)
         {
-            // try
-            // {
+            try
+            {
                 if (model == null)
                 {
                     return BadRequest("Invalid payload");
@@ -63,11 +63,15 @@ namespace dotnetapp.Controllers
                 }
 
                 return Ok(new { message });
-            //}
-            // catch (Exception ex)
-            // {
-            //     return StatusCode(500, ex.Message);
-            // }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Registration failed due to a server error.",
+                    detail = ex.Message
+                });
+            }
         }
     }
 }
