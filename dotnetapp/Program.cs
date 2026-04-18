@@ -24,7 +24,13 @@ var jwtAudience = builder.Configuration["JWT:ValidAudience"];
 // 1. DATABASE CONFIGURATION
 // ============================================================
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("con")));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("con"),
+        sqlOptions =>
+            sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(10),
+                errorNumbersToAdd: null)));
 
 // ============================================================
 // 2. IDENTITY CONFIGURATION
