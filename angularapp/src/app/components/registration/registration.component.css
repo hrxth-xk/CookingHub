@@ -1,0 +1,158 @@
+.maple-register-page {
+	min-height: calc(100vh - 72px);
+	background: linear-gradient(180deg, #12141a 0%, #0f1116 50%, #0d0f14 100%);
+	position: relative;
+	overflow: hidden;
+	padding: 38px 18px 0;
+}
+
+.register-shell {
+	position: relative;
+	z-index: 2;
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 6px 0 42px;
+}
+
+.register-head {
+	text-align: center;
+	color: var(--maple-ink);
+	margin-bottom: 14px;
+}
+
+.register-head h1 {
+	margin: 2px 0 6px;
+	font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+	letter-spacing: 0.01em;
+	font-size: clamp(2.9rem, 6vw, 4.3rem);
+	line-height: 0.9;
+}
+
+.register-head p {
+	max-width: 680px;
+	margin: 0 auto;
+	color: var(--maple-muted);
+}
+
+.eyebrow {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.76rem;
+	color: var(--maple-muted);
+}
+
+.register-card {
+	border-radius: 22px;
+	padding: 30px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.field-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+
+.field-block {
+	display: flex;
+	flex-direction: column;
+}
+
+.field-block.full {
+	grid-column: 1 / -1;
+}
+
+.field-block label {
+	font-weight: 600;
+	color: #cdd4e2;
+	margin-bottom: 6px;
+}
+
+.form-control {
+	border-radius: 12px;
+	border: 1px solid var(--maple-input-border);
+	background: var(--maple-input-bg);
+	color: var(--maple-ink);
+	padding: 10px 12px;
+}
+
+.form-control:focus {
+	border-color: var(--maple-accent);
+	box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
+	background: var(--maple-input-bg);
+	color: var(--maple-ink);
+}
+
+.text-danger {
+	margin-top: 4px;
+	font-size: 0.8rem;
+}
+
+.register-error {
+	margin-top: 8px;
+}
+
+.register-actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	margin-top: 22px;
+}
+
+.btn-maple {
+	border-radius: 999px;
+	padding: 10px 18px;
+	border: none;
+	text-decoration: none;
+	font-weight: 600;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	text-align: center;
+}
+
+.btn-maple:hover {
+	transform: translateY(-1px);
+}
+
+.btn-maple-solid {
+	background: linear-gradient(180deg, #ffffff, #e9ecf2);
+	color: #111318;
+	box-shadow: var(--maple-shadow-btn);
+}
+
+.btn-maple-light {
+	background: rgba(255, 255, 255, 0.06);
+	color: var(--maple-accent);
+	border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.btn-maple-light:hover {
+	background: rgba(255, 255, 255, 0.14);
+}
+
+.btn-maple-solid:hover {
+	background: linear-gradient(180deg, #ffffff, #d9dde6);
+}
+
+@media (max-width: 800px) {
+	.field-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.register-actions {
+		flex-direction: column;
+	}
+
+	.register-actions .btn-maple {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.register-card {
+		padding: 24px;
+	}
+
+}

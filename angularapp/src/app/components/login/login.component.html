@@ -1,0 +1,55 @@
+<section class="maple-auth-page">
+  <div class="auth-shell">
+    <div class="auth-card-wrap">
+      <header class="auth-head">
+        <p class="eyebrow">Maple Member Access</p>
+        <h1>Welcome Back</h1>
+        <p>Sign in and continue your premium culinary learning journey with Maple.</p>
+      </header>
+
+      <div class="auth-card">
+        <div class="card-head">
+          <h2>Login to Maple</h2>
+          <span>Craft. Learn. Plate.</span>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="field-group">
+            <label>Email</label>
+            <input
+              type="email"
+              class="form-control"
+              [class.is-invalid]="loginForm.get('Email')?.invalid && loginForm.get('Email')?.touched"
+              formControlName="Email"
+              placeholder="you@maplestudio.com" />
+            <div class="invalid-feedback">Valid email required</div>
+          </div>
+
+          <div class="field-group">
+            <label>Password</label>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              [class.is-invalid]="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched"
+              formControlName="Password"
+              placeholder="Your password" />
+            <div class="invalid-feedback">Password required</div>
+          </div>
+
+          <button type="button" class="toggle-password" (click)="togglePassword()">
+            {{ showPassword ? 'Hide password' : 'Show password' }}
+          </button>
+
+          <div class="error-text" *ngIf="error">{{ error }}</div>
+
+          <div class="actions-row">
+            <a class="btn-maple btn-maple-light" routerLink="/register">Create Account</a>
+            <button type="submit" class="btn-maple btn-maple-solid" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+

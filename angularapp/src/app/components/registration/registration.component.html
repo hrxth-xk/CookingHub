@@ -1,0 +1,77 @@
+<section class="maple-register-page">
+  <div class="register-shell">
+    <header class="register-head">
+      <p class="eyebrow">Join The Maple Studio</p>
+      <h1>Create Your Maple Account</h1>
+      <p>Unlock chef-led classes, polished scheduling, and a premium dashboard for your cooking growth.</p>
+    </header>
+
+    <div class="register-card">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="field-grid">
+          <div class="field-block full">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="Email" placeholder="you@maplestudio.com">
+            <div class="text-danger" *ngIf="registerForm.get('Email')?.invalid && registerForm.get('Email')?.touched">
+              Valid email required
+            </div>
+          </div>
+
+          <div class="field-block">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="Password" placeholder="At least 6 characters">
+            <div class="text-danger" *ngIf="registerForm.get('Password')?.invalid && registerForm.get('Password')?.touched">
+              Password must be at least 6 characters
+            </div>
+          </div>
+
+          <div class="field-block">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="ConfirmPassword" placeholder="Repeat password">
+            <div class="text-danger"
+              *ngIf="registerForm.get('ConfirmPassword')?.value !== registerForm.get('Password')?.value && registerForm.get('ConfirmPassword')?.touched">
+              Passwords do not match
+            </div>
+          </div>
+
+          <div class="field-block">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="Username" placeholder="How should we call you?">
+            <div class="text-danger" *ngIf="registerForm.get('Username')?.invalid && registerForm.get('Username')?.touched">
+              Username required
+            </div>
+          </div>
+
+          <div class="field-block">
+            <label>Mobile Number</label>
+            <input type="text" class="form-control" formControlName="MobileNumber" placeholder="10-digit mobile">
+            <div class="text-danger" *ngIf="registerForm.get('MobileNumber')?.invalid && registerForm.get('MobileNumber')?.touched">
+              Enter 10-digit mobile number
+            </div>
+          </div>
+
+          <div class="field-block full">
+            <label>Role</label>
+            <select class="form-control" formControlName="UserRole">
+              <option value="User">User</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="text-danger register-error" *ngIf="error">{{error}}</div>
+
+        <div class="register-actions">
+          <a routerLink="/login" class="btn-maple btn-maple-light">Already have an account?</a>
+          <button type="submit" class="btn-maple btn-maple-solid" [disabled]="registerForm.invalid">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+
+ 

@@ -1,0 +1,67 @@
+.imp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.imp-card {
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.imp-icon {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.imp-card h3 {
+  font-family: var(--maple-font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--maple-ink-light);
+  margin-bottom: 12px;
+}
+
+.imp-card p {
+  color: var(--maple-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.imp-quote {
+  text-align: center;
+  padding: 32px;
+  border-left: 4px solid var(--maple-accent);
+}
+
+.imp-quote blockquote {
+  margin: 0;
+  font-family: var(--maple-font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--maple-ink-light);
+  line-height: 1.5;
+}
+
+.imp-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: var(--maple-muted);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .imp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .imp-grid {
+    grid-template-columns: 1fr;
+  }
+}

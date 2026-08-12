@@ -1,0 +1,36 @@
+<div class="app-shell">
+  <ng-container *ngIf="auth.currentUser | async as user; else publicNavbar">
+    <app-adminnav *ngIf="user?.role === 'admin'"></app-adminnav>
+    <app-usernav  *ngIf="user?.role === 'user'"></app-usernav>
+  
+    <!-- If logged in but no role in token -->
+    <app-navbar *ngIf="user && !user.role"></app-navbar>
+  </ng-container>
+  
+  <ng-template #publicNavbar>
+    <app-navbar></app-navbar>
+  </ng-template>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="maple-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Maple Studio</h3>
+        <p>Premium access to the art of cooking.</p>
+      </div>
+      <div>
+        <p><strong>Email:</strong> support@maplehub.com</p>
+        <p><strong>Phone:</strong> +1 555 013 8842</p>
+      </div>
+      <div>
+        <p><strong>Address:</strong> 38 Maple Square, Culinary District</p>
+        <p>&copy; 2026 Maple. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <app-chatbot></app-chatbot>
+</div>

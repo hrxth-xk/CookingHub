@@ -1,0 +1,193 @@
+.maple-auth-page {
+  min-height: calc(100vh - 72px);
+  background: linear-gradient(180deg, #12141a 0%, #0f1116 50%, #0d0f14 100%);
+  color: var(--maple-ink);
+  position: relative;
+  overflow: hidden;
+  padding: 38px 18px 0;
+}
+
+.auth-shell {
+  position: relative;
+  z-index: 2;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0 42px;
+}
+
+.auth-card-wrap {
+  width: min(640px, 100%);
+  display: grid;
+  gap: 14px;
+}
+
+.auth-head {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--maple-muted);
+  font-size: 0.74rem;
+}
+
+.auth-head h1 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 0.9;
+  color: var(--maple-ink-light);
+}
+
+.auth-head p {
+  margin: 8px auto 0;
+  max-width: 520px;
+  color: var(--maple-muted);
+}
+
+.auth-card {
+  width: 100%;
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.auth-card form {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.card-head h2 {
+  margin: 0;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  font-size: 1.65rem;
+  color: var(--maple-ink-light);
+}
+
+.card-head {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.card-head span {
+  color: var(--maple-muted);
+  font-size: 0.9rem;
+}
+
+.field-group {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #cdd4e2;
+}
+
+.form-control {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--maple-input-border);
+  padding: 10px 12px;
+  background: var(--maple-input-bg);
+  color: var(--maple-ink);
+}
+
+.form-control:focus {
+  border-color: var(--maple-accent);
+  box-shadow: 0 0 0 0.18rem rgba(255, 255, 255, 0.22);
+  background: var(--maple-input-bg);
+  color: var(--maple-ink);
+}
+
+.toggle-password {
+  margin-top: 12px;
+  border: none;
+  background: transparent;
+  color: var(--maple-muted);
+  padding: 0;
+  font-size: 0.88rem;
+  text-decoration: underline;
+}
+
+.error-text {
+  margin-top: 12px;
+  color: #b3261e;
+  font-size: 0.86rem;
+}
+
+.actions-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.actions-row .btn-maple {
+  min-width: 168px;
+}
+
+.btn-maple {
+  border-radius: 999px;
+  padding: 10px 18px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.btn-maple:hover {
+  transform: translateY(-1px);
+}
+
+.btn-maple-solid {
+  background: linear-gradient(180deg, #ffffff, #e9ecf2);
+  color: #111318;
+  box-shadow: var(--maple-shadow-btn);
+}
+
+.btn-maple-light {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--maple-accent);
+}
+
+.btn-maple-light:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.btn-maple-solid:hover {
+  background: linear-gradient(180deg, #ffffff, #d9dde6);
+}
+
+@media (max-width: 900px) {
+  .auth-shell {
+    padding-bottom: 32px;
+  }
+
+  .actions-row {
+    flex-direction: column;
+  }
+
+  .actions-row .btn-maple {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+}
+   

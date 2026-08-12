@@ -1,0 +1,36 @@
+<div class="feedback-page">
+  <div class="dashboard-card feedback-form-card">
+
+    <div class="page-header centered">
+      <h2 class="page-title">Share Your Feedback</h2>
+      <p class="page-subtitle">Let us know about your experience with Maple</p>
+    </div>
+
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-field">
+        <label>Your Feedback</label>
+        <textarea
+          rows="5"
+          placeholder="Tell us what you loved, or what we can improve..."
+          formControlName="FeedbackText">
+        </textarea>
+        <div class="error"
+          *ngIf="feedbackForm.get('FeedbackText')?.invalid && feedbackForm.get('FeedbackText')?.touched">
+          Feedback text is required
+        </div>
+      </div>
+
+      <div class="form-actions centered">
+        <button type="submit"
+          class="btn-maple btn-maple-solid"
+          [disabled]="feedbackForm.invalid">
+          Submit Feedback
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+   
